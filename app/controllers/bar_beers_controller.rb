@@ -2,13 +2,13 @@ class BarBeersController < ApplicationController
   before_action :set_bar_beer, only: [:edit, :update, :destroy]
 
   def index
-    @bars = Bar.find(params[:bar_id])
     @bar_beers = policy_scope(BarBeer).all
+    @bars = policy_scope(Bar).all
   end
 
   def new
     @bars = Bar.find(params[:bar_id])
-    @bar_beer = BarBeer.new
+    @bar_beer = Barbeer.new
   end
 
   def create
@@ -47,5 +47,4 @@ class BarBeersController < ApplicationController
   def bar_beer_params
     params.require(:bar_beer).permit(:quantity, :selling_price)
   end
-
 end
