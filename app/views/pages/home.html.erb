@@ -1,11 +1,11 @@
-<h1>Pages#home</h1>
+
 
 <div class="container">
       <%= link_to 'Home', root_path, class: "btn-gradient-rose" %>
       <%= link_to 'Home', root_path, class: "btn-gradient-jaune" %>
+      <%= link_to '', root_path, class: "fas fa-plus-circle btn-rose" %>
+      <%= link_to '', root_path, class: "fas fa-plus-circle btn-jaune" %>
 
-      <i class="fas fa-plus-circle btn-rose"></i>
-      <i class="fas fa-plus-circle btn-jaune"></i>
       <i class="fas fa-plus btn-rose"></i>
       <i class="fas fa-minus btn-rose"></i>
       <i class="fas fa-times btn-jaune"></i>
@@ -17,8 +17,3 @@
 </div>
 
 
-<div class="container test-cloudinary">
-      <%= cl_image_tag("https://res.cloudinary.com/dduubmloj/image/upload/v1624020568/brice-de-nice_nchald.webp",
-            width: 400, height: 300, crop: :fill) %>
-      <p>Test CLOUDINARY</p>
-</div>
