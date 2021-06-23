@@ -1,0 +1,29 @@
+.input-style {
+  border-radius: 28px;
+}
+
+label {
+  display: none;
+}
+
+label[for="user_remember_me"] {
+  display: block;
+}
+
+.link-devise {
+  text-align: center;
+  display: inline-block;
+  margin-top: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+.link-devise:hover {
+  text-decoration: none;
+  color: grey;
+  font-weight: bold;
+}
+
+.elmt-center {
+  text-align: center;
+}
