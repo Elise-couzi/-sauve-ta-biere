@@ -1,0 +1,8 @@
+<% @bars.each do |bar| %>
+ <%= link_to bar_path(bar), class: 'link' do %>
+ <li>
+  <%= bar.name %>
+  <%= bar.address %>
+  </li>
+  <% end %>
+<% end %>
