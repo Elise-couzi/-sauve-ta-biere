@@ -26,3 +26,75 @@
   text-decoration: none;
 }
 
+.btn-rose {
+  display: inline-block;
+  color: #F08787;
+  font-size: 24px;
+}
+
+.btn-rose:hover {
+  color: #e58080;
+  text-decoration: none;
+}
+
+.btn-valid-rose {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFC6A1), to(#F08787));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-valid-rose:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2bc9b), to(#e58080));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.btn-large {
+  font-size: 48px;
+}
+
+.btn-jaune {
+  display: inline-block;
+  color: #FFB651;
+  font-size: 24px;
+}
+
+.btn-jaune:hover {
+  color: #f4ab4b;
+  text-decoration: none;
+}
+
+.btn-pending-jaune {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FEE061), to(#FFB651));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-pending-jaune:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2d45c), to(#f4ab4b));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-arrow-grey {
+  color: grey;
+  font-size: 24px;
+}
+
+.btn-arrow-grey:hover {
+  color: rgb(66, 66, 66);
+}
+
+.btn-arrow-white {
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+}
+
+.btn-arrow-white:hover {
+  color: rgb(199, 199, 199);
+}
+// .btn-delete {
+//   font-size: 24px;
+//   color: black;
+// }
