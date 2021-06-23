@@ -11,8 +11,8 @@ OrderBeer.destroy_all
 Order.destroy_all
 BarBeer.destroy_all
 Beer.destroy_all
-Bar.destroy_all
 Schedule.destroy_all
+Bar.destroy_all
 User.destroy_all
 
 puts "nettoyage en cours"
