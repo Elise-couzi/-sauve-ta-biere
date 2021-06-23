@@ -1,6 +1,6 @@
 class BarPolicy < ApplicationPolicy
   def update?
-    @record.user == user
+    record.user == user
   end
 
   class Scope < Scope
