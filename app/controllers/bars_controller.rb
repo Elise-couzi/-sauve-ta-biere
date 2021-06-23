@@ -1,6 +1,8 @@
 class BarsController < ApplicationController
   before_action :set_bar, only: [:show, :edit]
 
+  def index; end
+
   def show; end
 
   def new
