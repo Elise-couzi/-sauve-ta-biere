@@ -1,5 +1,5 @@
 <h1>Welcome to <%= @bar.name %></h1>
 
-<p>C'est le bar de <%= @bar.user %></p>
+<p>C'est le bar de <%= @bar.user.first_name %> <%= @bar.user.last_name %></p>
 <p>Tu peux nous retrouver là : <%= @bar.address %></p>
 

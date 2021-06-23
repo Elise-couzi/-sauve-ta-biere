@@ -46,5 +46,4 @@ class BarBeersController < ApplicationController
   def bar_beer_params
     params.require(:bar_beer).permit(:quantity, :selling_price)
   end
-
 end
