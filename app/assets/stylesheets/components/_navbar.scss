@@ -11,3 +11,11 @@
   color: black;
 }
 
+.nav-link {
+  opacity: 0.3
+}
+
+.nav-link.active {
+  opacity: 1;
+}
+

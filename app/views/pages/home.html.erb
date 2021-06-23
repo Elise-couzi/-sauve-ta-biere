@@ -16,4 +16,19 @@
       <i class="fas fa-chevron-left btn-arrow-white"></i>
 </div>
 
+<div style="padding: 30px"></div>
 
+<div class="container">
+  <h1>Se connecter/déconnecter</h1>
+  <p>je sais pas encore où le mettre mais je pensais pas dans la navbar directement, à voir mais du coup je pose ça là</p>
+  <div>
+    <ul class="container" style="text-align: center">
+      <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn-gradient-rose" %>
+      <% else %>
+          <%= link_to 'Login', new_user_session_path, class: "btn-gradient-rose" %>
+      <% end %>
+    </ul>
+  </div>
+
+</div>
