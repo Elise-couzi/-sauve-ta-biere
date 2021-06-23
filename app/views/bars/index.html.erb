@@ -1,9 +1,15 @@
 <h1>Les bars</h1>
-<% @bars.each do |bar| %>
- <%= link_to bar_bar_beers_path(bar), class: 'link' do %>
- <li>
-  <%= bar.name %>
-  <%= bar.address %>
-  </li>
+
+<div class="row">
+  <% @bars.each do |bar| %>
+    <div class="col-12">
+      <div class="card">
+        <%= link_to bar_bar_beers_path(bar), class: 'link' do %>
+          <%= bar.name %>
+          <%= bar.address %>
+        <% end %>
+      </div>
+    </div>
+
   <% end %>
-<% end %>
+</div>

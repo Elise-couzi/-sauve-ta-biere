@@ -1,25 +1,48 @@
-<h2>Sign up</h2>
+<div class="container">
+  
+      <h2>S'inscrire</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :email,
+                placeholder: "jean.bouteille@email.com",
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "email", class: "input-style" }%>
+    <%= f.input :first_name,
+                required: true,
+                placeholder: "Jean",
+                input_html: { autocomplete: "Ton prénom", class: "input-style" } %>
+    <%= f.input :last_name,
+                required: true,
+                label: "Ton nom",
+                placeholder: "Bouteille",
+                input_html: { autocomplete: "ton nom", class: "input-style" } %>  
+    <%= f.input :address,
+                required: true,
+                placeholder: "Ton adresse complète",
+                input_html: { autocomplete: "ton adresse", class: "input-style" } %>          
     <%= f.input :password,
+    placeholder: "Choisis ton mot de passe",
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class: "input-style" } %>
     <%= f.input :password_confirmation,
+                placeholder: "Confirmes ton mot de passe",
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class: "input-style" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+  <div class="container elmt-center">
+    <div class="form-actions">
+        <%= f.button :submit, "S'inscrire", class: "btn-gradient-rose" %>
+      </div>
+    <% end %>
 
-<%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
+  </div>
+
+</div>
+
