@@ -4,28 +4,72 @@
 
 
 <%# Je veux afficher uniquement les bar_beer du bar_id choisi(dans le path) %>
-
-<div class="bannerbeer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dduubmloj/image/upload/v1624526548/beer-machine-alcohol-brewery-159291_w2kdmm.jpg);">
+<div class= "container" style="padding-left: 40px; padding-top: 20px;">
+  <a href="javascript:history.back()"><i class="fas fa-chevron-left btn-arrow-white"></i></a>
 </div>
-<div class= "col 12">
+
+
+<div class="bannerbeer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dduubmloj/image/upload/v1624545734/elevate-KJzrLIfq2Zo-unsplash_lpddyh.jpg);"></div>
+
 <div>
-  <div><img class="avatar-large" alt="avatar-large" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624539903/logo_labiche_yatzm3.png" />
-</div>
-  <div>
-    <h2><%= @bar.name %></h2>
-    <p><%= @bar.address %></p>
-  </div>
+  <img class="avatar-bar" alt="La Biche et Le Renard" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624546309/Biche-renard-logo-01_eg2xwu.png" />
 </div>
 
-  <div>
+<div class="title-bar"><h4><%= @bar.name %></h4></div>
+<div class="img-bar"><img src="https://res.cloudinary.com/dduubmloj/image/upload/v1624547359/map-marker-alt-solid_mtilye.svg" alt="map-marker"></div>
+<div class="address-bar"><p><%= @bar.address %></p></div>
+
+<div class="container">
+<div style="padding: 40px"></div>
+
+  <div style="text-align: center">
   <p> Aujourd'hui 18h00 - 20h00</p>
   </div>
-  <div class =" col 12">
-    <%@bar_beers.each do |bar_beer| %>
-      <div class="card">
-        <h5 class="card-title"><%= bar_beer.beer.name%> </h5>
-        <p class="card-text"><%= bar_beer.beer.category%> | <%= bar_beer.beer.alcohol_degree%>°</p>
+
+  <div>
+    <%@bar_beers.each do |bar_beer| %> <!--  ajouter le prix initial -->
+      <div class="beers-card">
+        <%= link_to root_path, class: 'link' do %>
+          <div class="beers-card-infos">
+            <div>
+              <h5 class="card-title"><%= bar_beer.beer.name%> </h5>
+              <p class="card-text"><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%>°</p>
+            </div>
+            <div>
+              <p style="color:orange; font-weight: medium;"><%= bar_beer.quantity %> L</p>
+            </div>
+            <div>
+              <h5><%= bar_beer.selling_price%>€</h5>
+            </div>
+          </div>
+        <%end%>
       </div>
     <%end%>
   </div>
+
+</div>
+<div style="padding: 100px"></div>
+
+<div class="navbar fixed-bottom navbar-app">
+
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to "/", class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
+    <p>Home</p>
+    <% end %>
+  </li>
+
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to "/", class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg" %>
+    <p>Pannier</p>
+    <% end %>
+  </li>
+
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to "/", class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+    <p>Profil</p>
+    <% end %>
+  </li>
 </div>
