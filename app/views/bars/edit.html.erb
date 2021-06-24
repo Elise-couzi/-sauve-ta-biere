@@ -1,0 +1,16 @@
+<div class="container">
+  <div style="margin: 50px"></div>
+
+  <h1>Modifier mon bar</h1>
+
+ <%= simple_form_for @bar do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <!--   ajouter horaires  -->
+    <!--   ajouter photo  -->
+    <%= f.submit class: 'btn-gradient-rose' %>
+  <% end %>
+
+  <div style="margin: 50px"></div>
+
+</div>
