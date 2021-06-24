@@ -1,13 +1,63 @@
 .navbar-app {
-  justify-content: space-around;
+  justify-content: space-between;
   background: white;
+  padding-right: 40px;
+  padding-left: 40px;
+  height: 80px;
 }
 
 .navbar-nav img {
-  height: 50px;
+  height: 40px;
 }
 
 .navbar-nav .nav-link {
   color: black;
 }
 
+.nav-link {
+  opacity: 0.3
+}
+
+.nav-link.active {
+  opacity: 1;
+}
+
+.head-link {
+  color: white;
+}
+
+.head-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.head-link.active {
+  color: white;
+  border-bottom: 2px solid;
+}
+
+.navbar-top {
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: medium;
+  font-size: 14px;
+}
+
+.navbar-right.active {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: medium;
+}

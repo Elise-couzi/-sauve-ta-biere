@@ -1,7 +1,7 @@
 <div class="navbar fixed-bottom navbar-app">
 
 <li class="navbar-nav" style="text-align: center">
-  <%= link_to "/", class: "nav-link active aria-current='page'" do %>
+  <%= link_to "/", class: "nav-link active" do %>
   <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
   <p>Home</p>
   <% end %>
@@ -14,24 +14,11 @@
   <% end %>
 </li>
 
-  <div>
-    <ul class="navbar-nav" style="text-align: center">
-      <% if user_signed_in? %>
-        <li class="nav-link">
-          <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-          <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
-          <p>Logout</p>
-          <% end %>
-        </li>
-      <% else %>
-        <li class="navbar-nav">
-          <%= link_to new_user_session_path, class: "nav-link" do %>
-          <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
-          <p>Login</p>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+<li class="navbar-nav" style="text-align: center">
+  <%= link_to "/", class: "nav-link" do %>
+  <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+  <p>Profil</p>
+  <% end %>
+</li>
 
 </div>
