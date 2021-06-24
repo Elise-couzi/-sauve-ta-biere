@@ -1,0 +1,88 @@
+.pop-up {
+  position: relative;
+  height: 213px;
+  width: 313px;
+  margin: 36px;
+  border-radius: 24px;
+  background-color: #FCF8F3;
+  color: black;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1); 
+}
+.pop-up .btn-close {
+  margin-top: 16px;
+  padding-left: 120px;
+  position: absolute;
+}
+
+.pop-up .pop-up-content {
+  position: inherit;
+  top: 50px;
+}
+
+.pop-up .btn-gradient-rose {
+  position: inherit;
+  top: 70px;
+}
+
+.pop-up-panier {
+  position: relative;
+  padding: 0 16px 0 16px;
+  height: 313px;
+  width: 313px;
+  margin: 36px;
+  border-radius: 24px;
+  background-color: #FCF8F3;
+  color: black;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1); 
+}
+
+.p-description {
+  font-size: 12px;
+}
+
+.pop-up-panier .btn-plus {
+  position: absolute;
+  right: 110px;
+  top: 190px;
+}
+
+.pop-up-panier .btn-moins {
+  position: absolute;
+  left: 80px;
+  bottom: 74px;
+  right: 150px;
+  top: 190px;
+}
+
+.pop-up-panier .btn-gradient-rose {
+  position: inherit;
+  top: 50px;
+}
+
+.pop-up-panier .pop-up-content {
+  position: inherit;
+  top: 40px;
+}
+
+.quantity-panier {
+  position: relative;
+  top: 33px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+// test
+
+.container-pop-up {
+  display: flex;
+}
+
+.test-pop-up {
+  flex: 1;
+}
+
+.test-pop-up-two {
+  flex: 1;
+}
