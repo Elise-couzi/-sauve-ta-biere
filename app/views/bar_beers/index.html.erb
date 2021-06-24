@@ -1,14 +1,31 @@
-<h1>Les bières à sauver de mon bar </h1>
+
 <!-- les infos de mon bar -->
 <!-- lien vers page edit de bars du coup pour les modifier -->
 
 
 <%# Je veux afficher uniquement les bar_beer du bar_id choisi(dans le path) %>
-<% @bar_beers.each do |bar_beer| %>
-  <li>
-  <% if bar_beer.quantity >0 %>
-  <%= bar_beer.beer.name %>
-  <% else %>
-  <%end%>
-  </li>
-<% end %>
+
+<div class="bannerbeer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dduubmloj/image/upload/v1624526548/beer-machine-alcohol-brewery-159291_w2kdmm.jpg);">
+</div>
+<div class= "col 12">
+<div>
+  <div><img class="avatar-large" alt="avatar-large" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624539903/logo_labiche_yatzm3.png" />
+</div>
+  <div>
+    <h2><%= @bar.name %></h2>
+    <p><%= @bar.address %></p>
+  </div>
+</div>
+
+  <div>
+  <p> Aujourd'hui 18h00 - 20h00</p>
+  </div>
+  <div class =" col 12">
+    <%@bar_beers.each do |bar_beer| %>
+      <div class="card">
+        <h5 class="card-title"><%= bar_beer.beer.name%> </h5>
+        <p class="card-text"><%= bar_beer.beer.category%> | <%= bar_beer.beer.alcohol_degree%>°</p>
+      </div>
+    <%end%>
+  </div>
+</div>

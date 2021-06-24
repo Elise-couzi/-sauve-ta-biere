@@ -2,8 +2,10 @@ class BarBeersController < ApplicationController
   before_action :set_bar_beer, only: [:edit, :update, :destroy]
 
   def index
-    @bar_beers = policy_scope(BarBeer).all
-    @bars = policy_scope(Bar).all
+    @bar = Bar.find(params[:bar_id])
+
+    @bar_beers = policy_scope(BarBeer).where(bar:@bar).includes(:beer)
+    
   end
 
   def new
