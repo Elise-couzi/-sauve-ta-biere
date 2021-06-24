@@ -3,7 +3,7 @@ class DashboardsController < ApplicationController
   def index
     @user = current_user
     @bars = Bar.all
-    @bar_beers = policy_scope(BarBeer).where(bar:@bar).includes(:beer)
+    @bar_beers = policy_scope(BarBeer).where(bar: @bar).includes(:beer)
   end
 #   def index
 #     @bar = Bar.find(params[:bar_id])
