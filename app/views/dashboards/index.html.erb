@@ -1,0 +1,70 @@
+<div class="container">
+<div class="bannerbeer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dduubmloj/image/upload/v1624526548/beer-machine-alcohol-brewery-159291_w2kdmm.jpg);">
+</div>
+<div class= "col 12">
+  <div>
+    <div><img class="avatar-large" alt="avatar-large" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624539903/logo_labiche_yatzm3.png" />
+    </div>
+  <div>
+    <h2><%= @bars.name %></h2>
+    
+  </div>
+</div>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a class="nav-link" data-toggle="tab" href="#profil">Mes bières</a>
+  </li>
+  <li>
+    <a class="nav-link" data-toggle="tab" href="#menu1">Mes stats</a>
+  </li>
+</ul>
+<!-- Fin Nav tabs -->
+
+<!-- Nav tabs content-->
+<div class="tab-content">
+  <div id="profil" class="tab-pane fade active show">
+    <!-- Mes bières-->
+    
+    <div style="margin: 50px"></div>
+    <div style="margin: 50px"></div>
+    <div class="all-cards-dashboard">
+      <%@bar_beers.each do |bar_beer| %>
+        <div class="card">
+          <!--<%= link_to board_path(board), class: 'link' do %>-->
+              <h5 class="card-title"><%= bar_beer.beer.name%> </h5>
+              <p class="card-text"><%= bar_beer.beer.category%> | <%= bar_beer.beer.alcohol_degree%>°</p>
+                <%= link_to bar_bar_beer_path(bar_beer), method: :delete, data: { confirm: 'Tu veux supprimer ta bière ?' }, class: 'card-remove-link' do %>
+                <i class="fas fa-times" style="color: grey"></i>
+                <%end%>
+                <%= link_to edit_bar_bar_beer_path(bar_beer), class: "card-edit-link" do %>
+                <i class="fas fa-edit" style="color: grey"></i>
+                <%end%>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div style="margin: 50px"></div>
+  </div>
+
+  <div id="menu1" class="tab-pane fade">
+    <!-- Mes Stats -->
+    <div style="margin: 50px"></div>
+    <div class="all-cards-dashboard">
+     
+      <div class="card">
+
+    </div>-->
+
+      <div style="margin: 50px"></div>
+  </div>
+
+  
+
+  </div>
+</div>
+<!-- Fin Nav tabs content-->
+
+</div>
