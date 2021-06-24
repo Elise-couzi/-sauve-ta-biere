@@ -1,0 +1,19 @@
+<div class="container">
+  <form action="/beer_exist" method="POST">
+  <select name="beers" class="select2">
+        <% @beers.each do |beer|%>
+          <option value=<%= beer.id %>><%= beer.name %></option>
+        <% end %>
+      </select>
+      <button type="submit"></button>
+  </form>
+  <div class="input">
+   <!-- <div data-controller="hello">
+      <div class="input">
+        <input data-hello-target="name" type="text">
+      </div>
+      <button data-action="click->hello#refresh" class="fas fa-check-circle btn-valid-rose">Valider</button>
+    </div>
+    -->
+  </div>
+</div>

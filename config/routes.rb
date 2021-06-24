@@ -6,6 +6,7 @@ resources :bars do
   resources :bar_beers, only: [:index, :new, :edit, :destroy]
 end
 
+post "/beer_exist", to: "pages#beer_exist"
 
 # get "/pro", to: "pages#pro"
 

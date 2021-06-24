@@ -8,7 +8,9 @@ class BarBeersController < ApplicationController
 
   def new
     @bars = Bar.find(params[:bar_id])
-    @bar_beer = Barbeer.new
+    @bar_beer = BarBeer.new
+    authorize @bar_beer
+    @beers = Beer.all
   end
 
   def create
@@ -23,6 +25,7 @@ class BarBeersController < ApplicationController
     else
       render :new
     end
+    authorize @bar_beer
   end
 
   def edit
