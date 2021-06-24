@@ -1,15 +1,22 @@
+<div class= "container" style="padding-left: 40px; padding-top: 20px;">
+  <a href="javascript:history.back()"><i class="fas fa-chevron-left btn-arrow-white"></i></a>
+</div>
+
+
+<div class="bannerbeer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dduubmloj/image/upload/v1624545734/elevate-KJzrLIfq2Zo-unsplash_lpddyh.jpg);"></div>
+
+<div>
+  <img class="avatar-bar" alt="La Biche et Le Renard" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624546309/Biche-renard-logo-01_eg2xwu.png" />
+</div>
+
+<div class="title-bar"><h4><%= @bars.name %></h4></div>
+<div class="img-bar"><img src="https://res.cloudinary.com/dduubmloj/image/upload/v1624547359/map-marker-alt-solid_mtilye.svg" alt="map-marker"></div>
+<div class="address-bar"><p><%= @bars.name %></p></div> <!-- mettre address -->
+
 <div class="container">
-<div class="bannerbeer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dduubmloj/image/upload/v1624526548/beer-machine-alcohol-brewery-159291_w2kdmm.jpg);">
-</div>
-<div class= "col 12">
-  <div>
-    <div><img class="avatar-large" alt="avatar-large" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624539903/logo_labiche_yatzm3.png" />
-    </div>
-  <div>
-    <h2><%= @bars.name %></h2>
-    
-  </div>
-</div>
+<div style="padding: 40px"></div>
+
+
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -26,9 +33,14 @@
 <div class="tab-content">
   <div id="profil" class="tab-pane fade active show">
     <!-- Mes bières-->
-    
+
     <div style="margin: 50px"></div>
     <div style="margin: 50px"></div>
+     <div style="text-align: center">
+    <p> Aujourd'hui 18h00 - 20h00</p>
+    </div>
+
+
     <div class="all-cards-dashboard">
       <%@bar_beers.each do |bar_beer| %>
         <div class="card">
@@ -52,19 +64,43 @@
   <div id="menu1" class="tab-pane fade">
     <!-- Mes Stats -->
     <div style="margin: 50px"></div>
-    <div class="all-cards-dashboard">
-     
-      <div class="card">
 
-    </div>-->
+
 
       <div style="margin: 50px"></div>
   </div>
 
-  
 
-  </div>
+
+
 </div>
 <!-- Fin Nav tabs content-->
 
 </div>
+
+
+
+<div class="navbar fixed-bottom navbar-app">
+
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to pro_path, class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
+    <p>Home</p>
+    <% end %>
+  </li>
+
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to pro_path, class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461228/noun_Walk_3142394_r2cvnp.svg" %>
+    <p>Commandes</p>
+    <% end %>
+  </li>
+
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to pro_path, class: "nav-link active" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+    <p>Profil</p>
+    <% end %>
+  </li>
+</div>
+
