@@ -19,3 +19,38 @@
   opacity: 1;
 }
 
+.head-link {
+  color: white;
+}
+
+.head-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.head-link.active {
+  color: white;
+  border-bottom: 2px solid;
+}
+
+.navbar-top {
+  padding: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: medium;
+}
+
+.navbar-right.active {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: medium;
+}
