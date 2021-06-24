@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get "/pro", to: "pages#pro"
 
-# get "/dashboard", to: "dashboards#index"
+  get "/dashboard", to: "dashboards#index"
 
 # get "/commands", to: "commands#index"
 
