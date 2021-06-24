@@ -1,20 +1,60 @@
-.card {
-  background-color: rgb(255, 255, 255);
-  margin: 20px;
+.beers-card {
+  background-color: white;
+  margin: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: 28px;
 }
 
-.image {
-  height: 50px;
-  width: 414px
-}
 .bannerbeer {
   background-size: cover;
-  background-position: top;
+  background-position: center;
   margin-top: -100px;
-  height: 216px;
+  height: 280px;
+  width: 100%;
+//   border-radius: 0px 0px 0px 28px;//
 }
-.avatar-large {
-  position: relative;
-  width: 76px;
-  border-radius: 50%;
+
+.beers-card-infos {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar-bar {
+  position: absolute;
+  left: 30px;
+  top: 185px;
+}
+
+.title-bar {
+  position: absolute;
+  left: 140px;
+  top: 210px;
+  color: white;
+}
+
+.address-bar {
+  position: absolute;
+  left: 165px;
+  top: 253px;
+}
+
+.img-bar {
+  position: absolute;
+  left: 140px;
+  top: 250px;
+  width: 15px;
+}
+
+.link {
+  color: black;
+}
+
+.link:hover {
+  color: black;
+  text-decoration: none;
 }
