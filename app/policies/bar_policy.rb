@@ -3,6 +3,10 @@ class BarPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def show?
+    record.user == user || user.manager == false
+  end
+
   class Scope < Scope
     def resolve
       scope.all
