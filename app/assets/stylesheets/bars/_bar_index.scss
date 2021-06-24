@@ -1,8 +1,20 @@
 .card {
-  background-color: aqua;
+  background-color: rgb(255, 255, 255);
   margin: 20px;
 }
 
 .image {
-  background-color: red;
+  height: 50px;
+  width: 414px
+}
+.bannerbeer {
+  background-size: cover;
+  background-position: top;
+  margin-top: -100px;
+  height: 216px;
+}
+.avatar-large {
+  position: relative;
+  width: 76px;
+  border-radius: 50%;
 }
