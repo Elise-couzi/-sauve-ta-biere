@@ -9,9 +9,9 @@
   <img class="avatar-bar" alt="La Biche et Le Renard" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624546309/Biche-renard-logo-01_eg2xwu.png" />
 </div>
 
-<div class="title-bar"><h4><%= @bars.name %></h4></div>
+<div class="title-bar"><h4><%= @bar.name %></h4></div>
 <div class="img-bar"><img src="https://res.cloudinary.com/dduubmloj/image/upload/v1624547359/map-marker-alt-solid_mtilye.svg" alt="map-marker"></div>
-<div class="address-bar"><p><%= @bars.name %></p></div> <!-- mettre address -->
+<div class="address-bar"><p><%= @bar.address %></p></div> <!-- mettre address -->
 
 <div class="container">
 <div style="padding: 40px"></div>
@@ -37,26 +37,36 @@
     <div style="margin: 50px"></div>
     <div style="margin: 50px"></div>
      <div style="text-align: center">
-    <p> Aujourd'hui 18h00 - 20h00</p>
+    <p> Aujourd'hui 18h00 - 20h00</p><!-- à aller chercher dans la table schédule-->
     </div>
 
-
-    <div class="all-cards-dashboard">
-      <%@bar_beers.each do |bar_beer| %>
-        <div class="card">
-          <!--<%= link_to board_path(board), class: 'link' do %>-->
+    <div>
+    <%@bar_beers.each do |bar_beer| %> <!--  ajouter le prix initial -->
+      <div class="beers-card">
+        <%= link_to root_path, class: 'link' do %>
+          <div class="beers-card-infos">
+            <div>
+              <i class="icone-cards fas fa-edit" style="color:orange; font-weight: medium;"></i><!-- ajouter les linkto et les petites croix pour edit-->
+              <i class="icone-cards fas fa-times" style="color:orange; font-weight: medium;"></i>
+            </div>
+            <div>
               <h5 class="card-title"><%= bar_beer.beer.name%> </h5>
-              <p class="card-text"><%= bar_beer.beer.category%> | <%= bar_beer.beer.alcohol_degree%>°</p>
-                <%= link_to bar_bar_beer_path(bar_beer), method: :delete, data: { confirm: 'Tu veux supprimer ta bière ?' }, class: 'card-remove-link' do %>
-                <i class="fas fa-times" style="color: grey"></i>
-                <%end%>
-                <%= link_to edit_bar_bar_beer_path(bar_beer), class: "card-edit-link" do %>
-                <i class="fas fa-edit" style="color: grey"></i>
-                <%end%>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+              <p class="card-text"><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%>°</p>
+              <!-- ajouter les linkto et les petites croix pour destroy-->
+              
+            </div>
+            <div>
+              <p style="color:orange; font-weight: medium;"><%= bar_beer.quantity %> L</p>
+            </div>
+            <div>
+              <h5><%= bar_beer.selling_price%>€</h5>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    <%end%>
+    <div style="margin: 50px"></div>
+  </div>
 
     <div style="margin: 50px"></div>
   </div>
