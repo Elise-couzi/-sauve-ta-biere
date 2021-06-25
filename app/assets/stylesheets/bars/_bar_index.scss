@@ -32,6 +32,7 @@
 
 .title-bar {
   position: absolute;
+  display:flex;
   left: 140px;
   top: 210px;
   color: white;
@@ -57,4 +58,9 @@
 .link:hover {
   color: black;
   text-decoration: none;
+}
+
+#edit-bar{
+  padding-left: 10px;
+
 }

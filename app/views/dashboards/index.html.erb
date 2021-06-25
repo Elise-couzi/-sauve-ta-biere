@@ -9,7 +9,12 @@
   <img class="avatar-bar" alt="La Biche et Le Renard" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624546309/Biche-renard-logo-01_eg2xwu.png" />
 </div>
 
-<div class="title-bar"><h4><%= @bar.name %></h4></div>
+<div class="title-bar"><h4><%= @bar.name %></h4>
+<%=link_to edit_bar_path(@bar) do %>
+<i id="edit-bar" class="fas fa-edit" style="color:orange; font-weight: medium;"></i>
+<% end %>
+</div>
+
 <div class="img-bar"><img src="https://res.cloudinary.com/dduubmloj/image/upload/v1624547359/map-marker-alt-solid_mtilye.svg" alt="map-marker"></div>
 <div class="address-bar"><p><%= @bar.address %></p></div> <!-- mettre address -->
 
@@ -46,6 +51,7 @@
         <%= link_to root_path, class: 'link' do %>
           <div class="beers-card-infos">
             <div style="padding-left: 10px">
+               
               <i class="fas fa-edit" style="color:orange; font-weight: medium;"></i>
             </div>
             <div>

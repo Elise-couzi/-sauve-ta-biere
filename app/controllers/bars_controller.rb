@@ -4,6 +4,7 @@ class BarsController < ApplicationController
 
   def index
     @bars = policy_scope(Bar).all
+
   end
 
   def show; end
@@ -11,8 +12,9 @@ class BarsController < ApplicationController
   def edit; end
 
   def update
+    @bar = Bar.find(params[:id])
     @bar.update(bar_params)
-    redirect_to bar_path(@bar)
+    redirect_to dashboard_path
     authorize @bar
   end
 
@@ -20,6 +22,7 @@ class BarsController < ApplicationController
 
   def set_bar
     @bar = Bar.find(params[:id])
+    authorize @bar
   end
 
   def bar_params
