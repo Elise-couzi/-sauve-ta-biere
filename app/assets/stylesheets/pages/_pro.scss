@@ -2,14 +2,20 @@
   position: absolute;
   left: -60px;
   top: 85px;
-  width: 300px;
+  width: 250px;
   margin-left: 100px;
 }
 
-.img-home2 img {
-  position: absolute;
-  left: -60px;
-  top: 120px;
-  width: 250px;
-  margin-left: 100px;
+.img-pro img {
+  width: 120px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.img-partenaires img {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 28px;
 }

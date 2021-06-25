@@ -1,46 +1,56 @@
+<div class="bannerbeer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dduubmloj/image/upload/v1624619387/pexels-photo-1267684_mredkt.jpg);"></div>
+
 <div class="container">
-  <h1>Les bars</h1>
+
+  <h1>Sauve des bières ici</h1>
 
 <!-- Si le bar possède au moins une bière, afficher : -->
 <!-- Ou alors, afficher les bar_beers : -->
 
   <div class="row">
+
     <% @bars.each do |bar| %>
+      <% if bar.bar_beers.size >0  %>
       <div class="col-12">
         <div class="card">
           <%= link_to bar_bar_beers_path(bar), class: 'link' do %>
-            <%= bar.name %>
-            <%= bar.address %>
+            <h4><%= bar.name %></h4>
+            <p><%= bar.address %></p>
+              <%bar.bar_beers.each do |bar_beer| %>
+              <p>Sauve <%= bar_beer.quantity  %>L de <%= bar_beer.beer.name  %> ! </p>
+              
+              <% end %>
           <% end %>
         </div>
       </div>
-
+      <% end %>
     <% end %>
   </div>
+
 </div>
+
 <div style="padding: 100px"></div>
 
 <div class="navbar fixed-bottom navbar-app">
 
-<li class="navbar-nav" style="text-align: center">
-  <%= link_to "/", class: "nav-link" do %>
-  <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
-  <p>Home</p>
-  <% end %>
-</li>
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to "/", class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
+    <p>Home</p>
+    <% end %>
+  </li>
 
-<li class="navbar-nav" style="text-align: center">
-  <%= link_to "/", class: "nav-link" do %>
-  <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg" %>
-  <p>Pannier</p>
-  <% end %>
-</li>
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to "/", class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg" %>
+    <p>Pannier</p>
+    <% end %>
+  </li>
 
-<li class="navbar-nav" style="text-align: center">
-  <%= link_to "/", class: "nav-link" do %>
-  <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
-  <p>Profil</p>
-  <% end %>
-</li>
-
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to "/", class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+    <p>Profil</p>
+    <% end %>
+  </li>
 </div>

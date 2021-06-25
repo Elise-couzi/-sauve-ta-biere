@@ -1,0 +1,28 @@
+<div class="container">
+  <div style="margin: 50px"></div>
+
+<%= simple_form_for [@bar, @bar_beer] do |f| %> 
+ <input name="beer_name" type="search" class="input-bar_beer-new" placeholder="Quel est le nom de la bière ?"/>
+<%= f.input :quantity, input_html: { class: "input-bar_beer-new", placeholder:"Quelle quantité de bière veux-tu sauver ?"} %>
+<%= f.input :selling_price, input_html: { class: "input-bar_beer-new", placeholder:"À quel prix ?" } %>
+<%= f.button :submit %>
+<% end %> 
+    <div class="section">
+      <input name="beer_name" type="search" class="input-bar_beer-new" placeholder="Quel est le nom de la bière ?"/>
+      <div class="fas fa-check-circle btn-valid-rose-new "></div>
+    </div>
+
+    <div class="section">
+      <input name="quantity" type="text" class="input-bar_beer-new" placeholder="Quelle quantité de bière veux-tu sauver ?"/>
+      <div class="fas fa-check-circle btn-valid-rose-new "></div>
+    </div>
+
+    <div class="section">
+      <input name="selling_price" type="text" class="input-bar_beer-new" placeholder="À quel prix ?"/>
+      <div class="fas fa-check-circle btn-valid-rose-new"></div>
+    </div>
+
+
+  <div style="margin: 50px"></div>
+
+</div>

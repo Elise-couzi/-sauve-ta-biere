@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :bars do
-    resources :bar_beers, only: [:index, :new, :edit, :destroy]
+    resources :bar_beers, only: [:index, :new, :create, :edit, :destroy]
   end
+
+  get "/beers/new", to: "beers#new"
+  post "/beers", to: "beers#create"
 
   get "/pro", to: "pages#pro"
 

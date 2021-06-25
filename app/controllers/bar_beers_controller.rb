@@ -5,25 +5,31 @@ class BarBeersController < ApplicationController
     @bar = Bar.find(params[:bar_id])
 
     @bar_beers = policy_scope(BarBeer).where(bar:@bar).includes(:beer)
-    
   end
 
   def new
-    @bars = Bar.find(params[:bar_id])
-    @bar_beer = Barbeer.new
+    @bar = Bar.find(params[:bar_id])
+    @bar_beer = BarBeer.new
+    authorize @bar_beer
   end
 
   def create
     @user = current_user
     @bar = Bar.find(params[:bar_id])
-    @bar_beer = BarBeer.new(bar_beer_params)
-    @bar_beer.user = @user
-    @bar_beer.bar = @bar
-
-    if @bar_beer.save
-      redirect_to bar_path
+    @beer = Beer.find_by(name: params[:beer_name])
+    if @beer
+      @bar_beer = BarBeer.new(bar_beer_params)
+      @bar_beer.beer = @beer
+      @bar_beer.bar = @bar
+      authorize @bar_beer
+      if @bar_beer.save!
+        redirect_to bar_path(@bar)
+      else
+        raise
+        render :new
+      end
     else
-      render :new
+      raise
     end
   end
 
@@ -33,11 +39,13 @@ class BarBeersController < ApplicationController
   def update
     @bar_beer.update(bar_beer_params)
     redirect_to bar_path(@bar_beer)
+    authorize @bar_beer
   end
 
   def destroy
     @bar_beer.destroy
     redirect_to bar_path
+    authorize @bar_beer
   end
 
   private
