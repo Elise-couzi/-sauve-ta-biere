@@ -21,17 +21,17 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
   <li class="active">
-    <a class="nav-link" data-toggle="tab" href="#profil">Mes bières</a>
+    <a class="nav-link" data-toggle="tab" href="#bières">Mes bières</a>
   </li>
   <li>
-    <a class="nav-link" data-toggle="tab" href="#menu1">Mes stats</a>
+    <a class="nav-link" data-toggle="tab" href="#stats">Mes stats</a>
   </li>
 </ul>
 <!-- Fin Nav tabs -->
 
 <!-- Nav tabs content-->
 <div class="tab-content">
-  <div id="profil" class="tab-pane fade active show">
+  <div id="bières" class="tab-pane fade active show">
     <!-- Mes bières-->
 
     <div style="margin: 50px"></div>
@@ -39,29 +39,27 @@
      <div style="text-align: center">
     <p> Aujourd'hui 18h00 - 20h00</p><!-- à aller chercher dans la table schédule-->
     </div>
-
+    <div style="margin: 30px"></div>
     <div>
     <%@bar_beers.each do |bar_beer| %> <!--  ajouter le prix initial -->
       <div class="beers-card">
         <%= link_to root_path, class: 'link' do %>
           <div class="beers-card-infos">
-            <div>
-              <i class="icone-cards fas fa-edit" style="color:orange; font-weight: medium;"></i><!-- ajouter les linkto et les petites croix pour edit-->
-              <i class="icone-cards fas fa-times" style="color:orange; font-weight: medium;"></i>
+            <div style="padding-left: 10px">
+              <i class="fas fa-edit" style="color:orange; font-weight: medium;"></i>
             </div>
             <div>
-              <h5 class="card-title"><%= bar_beer.beer.name%> </h5>
-              <p class="card-text"><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%>°</p>
-              <!-- ajouter les linkto et les petites croix pour destroy-->
-              
+              <h6 class="card-title"><%= bar_beer.beer.name%> </h6>
+              <p class="card-categ"><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%>°</p>
             </div>
             <div>
-              <p style="color:orange; font-weight: medium;"><%= bar_beer.quantity %> L</p>
+              <p class="card-quantity"><%= bar_beer.quantity %> L dispo</p>
             </div>
             <div>
-              <h5><%= bar_beer.selling_price%>€</h5>
+              <p><%= bar_beer.selling_price%>€ / L</p>
             </div>
-          </div>
+            </div>
+            <div class="icone-cards"><i class="fas fa-times" style="color:orange; font-weight: medium;"></i></div>
         <%end%>
       </div>
     <%end%>
@@ -71,7 +69,7 @@
     <div style="margin: 50px"></div>
   </div>
 
-  <div id="menu1" class="tab-pane fade">
+  <div id="stats" class="tab-pane fade">
     <!-- Mes Stats -->
     <div style="margin: 50px"></div>
 
@@ -88,6 +86,7 @@
 
 </div>
 
+<div style="margin: 200px"></div>
 
 
 <div class="navbar fixed-bottom navbar-app">
