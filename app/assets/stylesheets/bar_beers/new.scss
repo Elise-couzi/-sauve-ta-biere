@@ -1,4 +1,4 @@
-.container{
+.container-beer-new{
   display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -12,13 +12,13 @@
   font-size: 25px;
 }
 
-.section{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    margin-bottom: 100px;
-    align-items: center;
+.section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .input-bar_beer-new{
@@ -29,4 +29,14 @@
   transition: background 0.3s ease;
   text-align: center;
   font-size: 1em;
+  margin-bottom: 0.8px;
+}
+
+.form-group {
+  margin-bottom: 0.8px;
+}
+
+::placeholder{
+  color: white;
+  font-size: 15px;
 }
