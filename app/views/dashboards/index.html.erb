@@ -9,9 +9,9 @@
   <img class="avatar-bar" alt="La Biche et Le Renard" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624546309/Biche-renard-logo-01_eg2xwu.png" />
 </div>
 
-<div class="title-bar"><h4><%= @bars.name %></h4></div>
+<div class="title-bar"><h4><%= @bar.name %></h4></div>
 <div class="img-bar"><img src="https://res.cloudinary.com/dduubmloj/image/upload/v1624547359/map-marker-alt-solid_mtilye.svg" alt="map-marker"></div>
-<div class="address-bar"><p><%= @bars.name %></p></div> <!-- mettre address -->
+<div class="address-bar"><p><%= @bar.address %></p></div> <!-- mettre address -->
 
 <div class="container">
 <div style="padding: 40px"></div>
@@ -21,47 +21,56 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
   <li class="active">
-    <a class="nav-link" data-toggle="tab" href="#profil">Mes bières</a>
+    <a class="nav-link" data-toggle="tab" href="#bières">Mes bières</a>
   </li>
   <li>
-    <a class="nav-link" data-toggle="tab" href="#menu1">Mes stats</a>
+    <a class="nav-link" data-toggle="tab" href="#stats">Mes stats</a>
   </li>
 </ul>
 <!-- Fin Nav tabs -->
 
 <!-- Nav tabs content-->
 <div class="tab-content">
-  <div id="profil" class="tab-pane fade active show">
+  <div id="bières" class="tab-pane fade active show">
     <!-- Mes bières-->
 
     <div style="margin: 50px"></div>
     <div style="margin: 50px"></div>
      <div style="text-align: center">
-    <p> Aujourd'hui 18h00 - 20h00</p>
+    <p> Aujourd'hui 18h00 - 20h00</p><!-- à aller chercher dans la table schédule-->
     </div>
+    <div style="margin: 30px"></div>
+    <div>
+    <%@bar_beers.each do |bar_beer| %> <!--  ajouter le prix initial -->
+      <div class="beers-card">
+        <%= link_to root_path, class: 'link' do %>
+          <div class="beers-card-infos">
+            <div style="padding-left: 10px">
+              <i class="fas fa-edit" style="color:orange; font-weight: medium;"></i>
+            </div>
+            <div>
+              <h6 class="card-title"><%= bar_beer.beer.name%> </h6>
+              <p class="card-categ"><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%>°</p>
+            </div>
+            <div>
+              <p class="card-quantity"><%= bar_beer.quantity %> L dispo</p>
+            </div>
+            <div>
+              <p><%= bar_beer.selling_price%>€ / L</p>
+            </div>
+                        <div class="icone-cards"><i class="fas fa-times" style="color:orange; font-weight: medium;"></i></div>
 
-
-    <div class="all-cards-dashboard">
-      <%@bar_beers.each do |bar_beer| %>
-        <div class="card">
-          <!--<%= link_to board_path(board), class: 'link' do %>-->
-              <h5 class="card-title"><%= bar_beer.beer.name%> </h5>
-              <p class="card-text"><%= bar_beer.beer.category%> | <%= bar_beer.beer.alcohol_degree%>°</p>
-                <%= link_to bar_bar_beer_path(bar_beer), method: :delete, data: { confirm: 'Tu veux supprimer ta bière ?' }, class: 'card-remove-link' do %>
-                <i class="fas fa-times" style="color: grey"></i>
-                <%end%>
-                <%= link_to edit_bar_bar_beer_path(bar_beer), class: "card-edit-link" do %>
-                <i class="fas fa-edit" style="color: grey"></i>
-                <%end%>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+            </div>
+        <%end%>
+      </div>
+    <%end%>
+    <div style="margin: 50px"></div>
+  </div>
 
     <div style="margin: 50px"></div>
   </div>
 
-  <div id="menu1" class="tab-pane fade">
+  <div id="stats" class="tab-pane fade">
     <!-- Mes Stats -->
     <div style="margin: 50px"></div>
 
@@ -78,6 +87,7 @@
 
 </div>
 
+<div style="margin: 200px"></div>
 
 
 <div class="navbar fixed-bottom navbar-app">

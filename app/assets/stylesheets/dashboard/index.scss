@@ -1,0 +1,43 @@
+.icone-cards {
+  position: relative;
+  right: -20px;
+  top: -24px;
+  margin-left: -30px
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: black;
+    background-color: #FCF8F3;
+    border-color: black black #FCF8F3;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid black;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.card-categ {
+  font-size: 12px;
+}
+
+.card-quantity {
+  color: orange;
+}
+
+.beers-card-infos p {
+  margin-bottom: 0px;
+}
