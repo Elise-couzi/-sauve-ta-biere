@@ -16,6 +16,16 @@
   <li class="navbar-nav">
     <%= link_to "PRO", pro_path, class: "head-link"%>
   </li>
+
+     <div style="margin: 8px"></div>
+
+  <li class="navbar-nav">
+      <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "head-link-btn" %>
+      <% else %>
+          <%= link_to 'Login', new_user_session_path, class: "head-link-btn" %>
+      <% end %>
+  </li>
   </div>
 </div>
 
@@ -35,7 +45,7 @@
 
 <div style="padding: 30px"></div>
 
-<div class="container">
+<!-- <div class="container">
   <h2>Components :</h2>
       <%= link_to 'Home', root_path, class: "btn-gradient-rose" %>
       <%= link_to 'Home', root_path, class: "btn-gradient-jaune" %>
@@ -92,26 +102,9 @@
             <%= link_to 'Ajouter au panier', root_path, class: "btn-gradient-rose" %>
       </div>
 </div>
-
+ -->
 <div style="padding: 30px"></div>
 
-<div class="container">
-  <h2>Se connecter/déconnecter :</h2>
-  <p>je sais pas encore où le mettre du coup je pose ça là</p>
-  <div>
-    <ul class="container" style="text-align: center">
-      <% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn-gradient-rose" %>
-      <% else %>
-          <%= link_to 'Login', new_user_session_path, class: "btn-gradient-rose" %>
-      <% end %>
-    </ul>
-
-    <div style="padding: 100px"></div>
-
-  </div>
-
-</div>
 
 <div class="navbar fixed-bottom navbar-app">
 
