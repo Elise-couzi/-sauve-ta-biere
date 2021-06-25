@@ -34,11 +34,12 @@ class BarBeersController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
     @bar_beer.update(bar_beer_params)
-    redirect_to bar_path(@bar_beer)
+    redirect_to dashboard_path(@bar_beer)
     authorize @bar_beer
   end
 
