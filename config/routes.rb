@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get "/dashboard", to: "dashboards#index"
 
-# get "/commands", to: "commands#index"
+  get "/commands", to: "commands#index"
 
 # patch "/validate/:id", to: "order_beers#validate" , as: :validated
 # patch "/decline/:id", to: "order_beers#decline" , as: :declined

@@ -1,0 +1,83 @@
+<div class="container header-arrow">
+  <div class= "container arrow-bloc" style="padding-left: 40px; padding-top: 20px;">
+    <a href="javascript:history.back()"><i class="fas fa-chevron-left btn-arrow-grey"></i></a>
+  </div>
+  <div class="container title-bloc">
+    <h3>Commandes</h3>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="container card-command"  style="margin-top:20px;">
+  <div class="card-contact-info">
+  <div class="container user-contact">
+      <p style="font-weight:bold; margin-bottom:0;">Jean Bouteille</p>
+      <p class="small-text">06.78.85.35.65</p>
+    </div>
+    <div class="container info-commands">
+      <p style="font-weight:bold; margin-bottom:0;">commande #20</p>
+      <p class="small-text">payée le 22/06/2021 à 20h20</p>
+    </div>
+  </div>
+    
+
+    <div class="container">
+
+          <div class="beers-card-infos">
+           <div>
+              <p style="color:orange; font-weight:bold;">1 L</p>
+            </div>
+            <div>
+              <h5 style="font-weight:bold; font-size:14px; margin-bottom:0;">Beer name </h5>
+              <p class="small-text">Blonde, 8°</p>
+            </div>
+           <div>
+           <p class="small-text">2 x 5€</p>
+           </div>
+            <div class="bloc-price">
+              <h5 style="font-weight:bold;">10 €</h5>
+            </div>
+          </div>
+
+    </div>
+  <div class="container total">
+    <div class="container total-info">
+      <h3 style="font-weight:bold; margin-bottom:0;">Total</h3>
+      <p class="small-text">2 litres de bières sauvés!</p>
+    </div>
+    <div class="container total-price">
+    <h3 style="font-weight:bold;">10 €</h3>
+    </div>
+  </div>
+    <div class="container btn-command" style="margin-bottom:20px;">
+    <%= link_to 'Valider', root_path, class: "btn-gradient-rose btn-valider-command" %>
+    <%= link_to 'Refuser', root_path, class: "btn-gradient-jaune btn-refuser-command" %>
+  </div>
+  </div>
+</div>
+
+<div class="navbar fixed-bottom navbar-app">
+
+<li class="navbar-nav" style="text-align: center">
+  <%= link_to pro_path, class: "nav-link" do %>
+  <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
+  <p>Home</p>
+  <% end %>
+</li>
+
+<li class="navbar-nav" style="text-align: center">
+  <%= link_to pro_path, class: "nav-link active" do %>
+  <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461228/noun_Walk_3142394_r2cvnp.svg" %>
+  <p>Commandes</p>
+  <% end %>
+</li>
+
+<li class="navbar-nav" style="text-align: center">
+  <%= link_to pro_path, class: "nav-link" do %>
+  <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+  <p>Profil</p>
+  <% end %>
+</li>
+
+</div>
