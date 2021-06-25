@@ -94,6 +94,18 @@
 .btn-arrow-white:hover {
   color: rgb(199, 199, 199);
 }
+
+.btn-fake-white {
+  padding: 12px 32px;
+  border-radius: 28px;
+  background-color: white;
+  color: grey;
+}
+
+.btn-fake-white:hover {
+  color: grey;
+  text-decoration: none;
+}
 // .btn-delete {
 //   font-size: 24px;
 //   color: black;
