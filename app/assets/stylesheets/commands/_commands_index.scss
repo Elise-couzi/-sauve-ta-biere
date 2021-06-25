@@ -1,0 +1,59 @@
+.header-arrow {
+  display: flex;
+}
+.arrow-bloc {
+  flex: 1;
+}
+.title-bloc {
+  flex: 1;
+  padding: 16px;
+  margin: 0 100px 20px 0;
+}
+.card-command {
+  padding: 8px 8px 8px 8px;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  color: black;
+  border-radius: 28px;
+}
+.small-text {
+  font-size: 11px;
+}
+.card-contact-info {
+  display: flex;
+}
+.user-contact {
+  flex: 1;
+  text-align: left;
+}
+.info-commands {
+  flex: 1;
+  text-align: right;
+}
+.bloc-price {
+  border-left: solid 1px grey;
+  padding: 8px 8px 0 26px;
+}
+.total {
+  display: flex;
+  border-top: solid 2px grey;
+  padding: 8px 0 8px 0;
+}
+.total-info {
+  text-align: left;
+  flex: 1;
+}
+.total-price {
+  text-align: right;
+  flex: 1;
+}
+.btn-command {
+  text-align: center;
+}
+.btn-valider-command {
+  text-align: left;
+}
+.btn-refuser-command {
+text-align: right;
+}
