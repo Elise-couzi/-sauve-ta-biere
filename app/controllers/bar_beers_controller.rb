@@ -23,7 +23,7 @@ class BarBeersController < ApplicationController
       @bar_beer.bar = @bar
       authorize @bar_beer
       if @bar_beer.save!
-        redirect_to bar_path(@bar)
+        redirect_to dashboard_path
       else
         raise
         render :new
