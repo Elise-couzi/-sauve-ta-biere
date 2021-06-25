@@ -16,6 +16,16 @@
   <li class="navbar-nav">
     <%= link_to "PRO", pro_path, class: "head-link active"%>
   </li>
+
+   <div style="margin: 8px"></div>
+
+  <li class="navbar-nav">
+      <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "head-link-btn" %>
+      <% else %>
+          <%= link_to 'Login', new_user_session_path, class: "head-link-btn" %>
+      <% end %>
+  </li>
   </div>
 </div>
 
