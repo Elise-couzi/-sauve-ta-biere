@@ -5,24 +5,37 @@
   margin-left: -30px
 }
 
-a {
-    color: black;
+.nav-pills .nav-link {
+    color: orange;
     text-decoration: none;
+    background-color: white;
 }
 
-a:hover {
-    color: black;
-    text-decoration: none;
+.nav-pills .pills-left {
+  border-radius: 28px 0px 0px 28px;
 }
 
-.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-    color: black;
-    background-color: #FCF8F3;
-    border-color: black black #FCF8F3;
+.nav-pills .pills-right {
+  border-radius: 0px 28px 28px 0px;
 }
 
-.nav-tabs {
-    border-bottom: 1px solid black;
+.nav-pills .nav-link:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+.nav-pills .nav-link {
+  opacity: 0.6;
+}
+
+.nav {
+  justify-content: center;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: white;
+  background-color: orange;
+  opacity: 1;
 }
 
 .card-title {
