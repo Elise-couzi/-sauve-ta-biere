@@ -20,7 +20,6 @@ class BarsController < ApplicationController
 
   def set_bar
     @bar = Bar.find(params[:id])
-    authorize @bar
   end
 
   def bar_params
