@@ -1,0 +1,33 @@
+.card-bar {
+  overflow: hidden;
+  background: white;
+  border-radius: 28px;
+  margin: 10px;
+  display: flex;
+}
+
+.card-bar-infos img {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+}
+
+.card-bar h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card-bar p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-bar .card-bar-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
