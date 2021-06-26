@@ -2,30 +2,58 @@
 
 <div class="container">
 
-  <h1>Sauve des bières ici</h1>
+  <h1 style="text-align: center">Sauve des bières ici</h1>
 
-<!-- Si le bar possède au moins une bière, afficher : -->
-<!-- Ou alors, afficher les bar_beers : -->
+<!-- Nav tabs -->
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item active">
+    <a class="nav-link pills-left" data-toggle="tab" href="#liste">Liste</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link pills-right" data-toggle="tab" href="#plan">Plan</a>
+  </li>
+</ul>
+<!-- Fin Nav tabs -->
 
-  <div class="row">
+<!-- Nav tabs content-->
+<div class="tab-content">
+  <div id="liste" class="tab-pane fade active show">
+    <!-- Liste -->
+    <div style="margin: 50px"></div>
 
-    <% @bars.each do |bar| %>
-      <% if bar.bar_beers.size >0  %>
-      <div class="col-12">
-        <div class="card">
-          <%= link_to bar_bar_beers_path(bar), class: 'link' do %>
-            <h4><%= bar.name %></h4>
-            <p><%= bar.address %></p>
-              <%bar.bar_beers.each do |bar_beer| %>
-              <p>Sauve <%= bar_beer.quantity  %>L de <%= bar_beer.beer.name  %> ! </p>
-              
+      <div class="row">
+        <% @bars.each do |bar| %>
+          <% if bar.bar_beers.size >0  %>
+          <div class="col-12">
+            <div class="card">
+              <%= link_to bar_bar_beers_path(bar), class: 'link' do %>
+                <h4><%= bar.name %></h4>
+                <p><%= bar.address %></p>
+                  <%bar.bar_beers.each do |bar_beer| %>
+                  <p>Sauve <%= bar_beer.quantity  %>L de <%= bar_beer.beer.name  %> ! </p>
+                  <% end %>
               <% end %>
+            </div>
+          </div>
           <% end %>
-        </div>
+        <% end %>
       </div>
-      <% end %>
-    <% end %>
+
+    <div style="margin: 50px"></div>
   </div>
+
+  <div id="plan" class="tab-pane fade">
+    <!-- Plan -->
+    <div style="margin: 50px"></div>
+
+
+
+    <div style="margin: 50px"></div>
+  </div>
+</div>
+<!-- Fin Nav tabs content-->
+
+
 
 </div>
 
