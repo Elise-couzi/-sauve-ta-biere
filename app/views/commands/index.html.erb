@@ -20,7 +20,7 @@
       <p class="small-text">payée le 22/06/2021 à 20h20</p>
     </div>
   </div>
-    
+
 
     <div class="container">
 
@@ -59,25 +59,24 @@
 
 <div class="navbar fixed-bottom navbar-app">
 
-<li class="navbar-nav" style="text-align: center">
-  <%= link_to pro_path, class: "nav-link" do %>
-  <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
-  <p>Home</p>
-  <% end %>
-</li>
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to pro_path, class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
+    <p>Home</p>
+    <% end %>
+  </li>
 
-<li class="navbar-nav" style="text-align: center">
-  <%= link_to pro_path, class: "nav-link active" do %>
-  <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461228/noun_Walk_3142394_r2cvnp.svg" %>
-  <p>Commandes</p>
-  <% end %>
-</li>
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to commands_path, class: "nav-link active" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461228/noun_Walk_3142394_r2cvnp.svg" %>
+    <p>Commandes</p>
+    <% end %>
+  </li>
 
-<li class="navbar-nav" style="text-align: center">
-  <%= link_to pro_path, class: "nav-link" do %>
-  <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
-  <p>Profil</p>
-  <% end %>
-</li>
-
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to dashboard_path, class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+    <p>Profil</p>
+    <% end %>
+  </li>
 </div>
