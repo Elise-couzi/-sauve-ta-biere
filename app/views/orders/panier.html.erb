@@ -1,0 +1,23 @@
+<h1>Orders</h1>
+  <%= @order.order_beers.count  %>
+  <h1>separation</h1>
+<% @order.order_beers.each do  |order_beer| %>
+  <%= order_beer.beer.name %>
+  <%= order_beer.buying_price %>
+<p><%= order_beer.quantity %> litres</p>
+
+
+  <%= link_to add_order_beer_path(order_beer), remote: true, method: :patch do %>
+    <p>ajouter</p>
+  <% end  %>
+
+  <%= link_to remove_order_beer_path(order_beer), remote: true, method: :patch do %>
+    <p>enlever</p>
+  <% end %>
+
+  <%= link_to order_beer_path(order_beer), remote: true, method: :delete,  data: { confirm: "Est ce que tu es sur?" } do %>
+    <p>supprimer</p>
+  <% end %> 
+<% end  %>
+
+
