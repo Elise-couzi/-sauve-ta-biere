@@ -1,0 +1,30 @@
+<div class="container elmt-center">
+  <div style="margin: 50px"></div>
+
+  <h2><%= @bar_beer.beer.name%></h2>
+  <p><%= @bar_beer.beer.category%>, <%= @bar_beer.beer.alcohol_degree%>°</p>
+
+<div class="">
+  <%= simple_form_for [@bar_beer] do |f| %>
+    <div style="margin: 20px">
+    <%= f.input :quantity, input_html: { class: "input-style", placeholder:"Combien de litre(s) veux-tu sauver ?"} %>
+    </div>
+
+    <div style="margin: 20px">
+    <%= f.input :selling_price, input_html: { class: "input-style", placeholder:"À quel prix ?" } %>
+    </div>
+
+    <div style="margin: 20px">
+    <%= f.button :submit, "Editer ma bière", class: "btn-gradient-rose" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Supprimer ma bière", bar_beer_path(@bar_beer), method: :delete, data: { confirm: 'Tu veux supprimer ta bière ?' }, class: 'btn-gradient-jaune' %>
+
+</div>
+
+
+
+  <div style="margin: 50px"></div>
+</div>
+

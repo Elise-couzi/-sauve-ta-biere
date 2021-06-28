@@ -1,7 +1,9 @@
 class CommandsController < ApplicationController
 
   def index
+    @orders = Order.all
     @bar_beers = policy_scope(BarBeer).where(bar: @bar).includes(:beer)
+    # @total_price_per_beer = order_beers.quantity * order_beers.buying_price
     
   end
 

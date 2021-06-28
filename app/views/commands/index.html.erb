@@ -7,13 +7,13 @@
   </div>
 </div>
 
-
+<% @orders.each do |order| %>
 <div class="container">
   <div class="container card-command"  style="margin-top:20px;">
   <div class="card-contact-info">
   <div class="container user-contact">
-      <p style="font-weight:bold; margin-bottom:0;">Jean Bouteille</p>
-      <p class="small-text">06.78.85.35.65</p>
+      <p style="font-weight:bold; margin-bottom:0;"><%=order.user.first_name %> <%=order.user.last_name %></p>
+      <p class="small-text"><%=order.state  %></p>
     </div>
     <div class="container info-commands">
       <p style="font-weight:bold; margin-bottom:0;">commande #20</p>
@@ -21,25 +21,26 @@
     </div>
   </div>
 
-
+<% order.order_beers.each do |order_beer| %>
     <div class="container">
 
           <div class="beers-card-infos">
            <div>
-              <p style="color:orange; font-weight:bold;">1 L</p>
+              <p style="color:orange; font-weight:bold;"><%= order_beer.quantity %> L</p>
             </div>
             <div>
-              <h5 style="font-weight:bold; font-size:14px; margin-bottom:0;">Beer name </h5>
-              <p class="small-text">Blonde, 8°</p>
+            
+              <h5 style="font-weight:bold; font-size:14px; margin-bottom:0;"><%= order_beer.bar_beer.beer.name %> </h5>
+              <p class="small-text"><%= order_beer.bar_beer.beer.category %>, <%= order_beer.bar_beer.beer.alcohol_degree %>°</p>
             </div>
            <div>
-           <p class="small-text">2 x 5€</p>
+           <p class="small-text"><%= order_beer.buying_price %>€</p>
            </div>
             <div class="bloc-price">
-              <h5 style="font-weight:bold;">10 €</h5>
+              <h5 style="font-weight:bold;"><%= @total_price_per_beer %> €</h5>
             </div>
           </div>
-
+           <% end %>
     </div>
   <div class="container total">
     <div class="container total-info">
@@ -56,7 +57,7 @@
   </div>
   </div>
 </div>
-
+<% end %>
 <div class="navbar fixed-bottom navbar-app">
 
   <li class="navbar-nav" style="text-align: center">
