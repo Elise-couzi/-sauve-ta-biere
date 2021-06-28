@@ -3,7 +3,7 @@
 </div>
 
 
-<div class="bannerbeer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dduubmloj/image/upload/v1624545734/elevate-KJzrLIfq2Zo-unsplash_lpddyh.jpg);"></div>
+<div class="bannerbeer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @bar.photo %>);"></div>
 
 <div>
   <img class="avatar-bar" alt="La Biche et Le Renard" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624546309/Biche-renard-logo-01_eg2xwu.png" />
@@ -21,7 +21,12 @@
 <div class="container">
 <div style="padding: 40px"></div>
 
+<div class="container elmt-center">
+  <h2>Salut <%= @bar.user.first_name %> !</h2>
+  <p>Bienvenue dans ton dashboard</p>
+</div>
 
+<div style="padding: 40px"></div>
 
 <!-- Nav tabs -->
 <ul class="nav nav-pills nav-fill">
@@ -67,7 +72,7 @@
               <p class="card-categ"><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%>°</p>
             </div>
             <div>
-              <p class="card-quantity"><%= bar_beer.quantity %> L dispo</p>
+              <p class="card-quantity"><%= bar_beer.quantity %> L à sauver</p>
             </div>
             <div>
               <p><%= bar_beer.selling_price%>€ / L</p>
