@@ -5,33 +5,83 @@
 	justify-content: center;
 }
 
-.btn-valid-rose-new {
+.btn-light {
   background: -webkit-gradient(linear, left top, left bottom, from(#FFC6A1), to(#F08787));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 25px;
 }
 
-.section {
+.section1 {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+	justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  height: 100vh;
+}
+
+#section2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+	justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 100vh;
+}
+
+#section3 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+	justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 100vh;
+}
+
+#section4 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+	justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 100vh;
 }
 
 .input-bar_beer-new{
   color: white;
   padding: 8px 12px;
   border-radius: 20px;
+  border-color: #F08787;
   background: linear-gradient(#FFC6A1, #F08787);
   transition: background 0.3s ease;
   text-align: center;
   font-size: 1em;
   margin-bottom: 0.8px;
+  width: 50vh;
 }
+
 
 .form-group {
   margin-bottom: 0.8px;
+}
+
+::placeholder {
+  color: white;
+}
+
+
+#btn-submit{
+  background: linear-gradient(#FFC6A1, #F08787);
+  padding: 8px 12px;
+  border-radius: 20px;
+  border-color: #F08787;
+}
+
+input.btn{
+  color: white;
 }

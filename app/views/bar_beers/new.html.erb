@@ -2,40 +2,35 @@
   <div style="margin: 50px"></div>
 
 <%= simple_form_for [@bar, @bar_beer] do |f| %> 
-<div class="section">
+<div class="section1">
   <input name="beer_name" type="search" class="input-bar_beer-new" placeholder="Quel est le nom de la bière ?"/>
-  <div class="fas fa-check-circle btn-valid-rose-new"></div>
+  <%= link_to "#section2" do %>
+    <div class="fas fa-check-circle btn btn-light"></div>
+  <% end %>
  </div>
 
-<div class="section">
-<%= f.input :quantity, input_html: { class: "input-bar_beer-new", placeholder:"Combien de litre(s) veux-tu sauver ?"} %>
-<div class="fas fa-check-circle btn-valid-rose-new"></div>
+<div id="section2">
+<%= f.input :quantity, input_html: { class: "input-bar_beer-new", placeholder:"Combien de litre(s) veux-tu sauver ?" } %>
+<%= link_to "#section3" do %>
+  <div class="fas fa-check-circle btn btn-light"></div>
+<% end %>
 </div>
 
-<div class="section">
+<div id="section3">
 <%= f.input :selling_price, input_html: { class: "input-bar_beer-new", placeholder:"À quel prix ?" } %>
-<div class="fas fa-check-circle btn-valid-rose-new"></div>
+<%= link_to "#section4" do %>
+<div class="fas fa-check-circle btn btn-light"></div>
+<% end %>
 </div>
 
-<div class="section">
+<div id="section4">
+<%= link_to dashboard_path do %>
+<button type="button" class="btn btn-info" id="btn-submit">
 <%= f.button :submit, input_html: { class: "btn-submit" } %>
+<% end %> 
+</button>
 </div>
 <% end %> 
-    <%# <div class="section">
-      <input name="beer_name" type="search" class="input-bar_beer-new" placeholder="Quel est le nom de la bière ?"/>
-      <div class="fas fa-check-circle btn-valid-rose-new "></div>
-    </div>
-
-    <div class="section">
-      <input name="quantity" type="text" class="input-bar_beer-new" placeholder="Quelle quantité de bière veux-tu sauver ?"/>
-      <div class="fas fa-check-circle btn-valid-rose-new "></div>
-    </div>
-
-    <div class="section">
-      <input name="selling_price" type="text" class="input-bar_beer-new" placeholder="À quel prix ?"/>
-      <div class="fas fa-check-circle btn-valid-rose-new"></div>
-    </div> %>
-
 
   <div style="margin: 50px"></div>
 </div>
