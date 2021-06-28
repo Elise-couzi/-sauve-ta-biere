@@ -1,14 +1,20 @@
-<div class="container">
+<div class= "container" style="padding-left: 40px; padding-top: 20px;">
+  <a href="javascript:history.back()"><i class="fas fa-chevron-left btn-arrow-grey"></i></a>
+</div>
+
+<div class="container elmt-center">
   <div style="margin: 50px"></div>
 
-  <h1>Modifier mon bar</h1>
+  <h2>Modifier mon bar</h2>
+
+   <div style="margin: 50px"></div>
 
  <%= simple_form_for @bar do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
+    <%= f.input :name, input_html: { class: "input-style" }%>
+    <%= f.input :address, input_html: { class: "input-style" } %>
     <!--   ajouter horaires  -->
     <!--   ajouter photo  -->
-    <%= f.submit class: 'btn-gradient-rose' %>
+    <%= f.button :submit, "Valider", class: "btn-gradient-rose" %>
   <% end %>
 
   <div style="margin: 50px"></div>

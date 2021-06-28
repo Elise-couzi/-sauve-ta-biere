@@ -25,8 +25,7 @@
           <%= link_to bar_bar_beers_path(bar), class: 'link' do %>
           <div class="card-bar col-12">
             <div class="card-bar-infos">
-                          <img src="https://res.cloudinary.com/dduubmloj/image/upload/v1624545734/elevate-KJzrLIfq2Zo-unsplash_lpddyh.jpg" />
-
+                <img src="<%= bar.photo %>" alt="">
                 <div>
                   <h2><%= bar.name %></h2>
                   <p><%= bar.address %></p>
