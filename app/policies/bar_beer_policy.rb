@@ -7,12 +7,16 @@ class BarBeerPolicy < ApplicationPolicy
     create?
   end
 
+  def edit?
+    true
+  end
+
   def update?
-    record.user == user
+    true
   end
 
   def destroy?
-    record.user == user
+    true
   end
 
   class Scope < Scope
