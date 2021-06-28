@@ -1,24 +1,37 @@
 <div class="container elmt-center">
   <div style="margin: 50px"></div>
 
-<%= simple_form_for [@bar, @bar_beer] do |f| %>
-<div style="margin: 20px">
-  <input name="beer_name" type="search" class="input-style" placeholder="Nom"/>
+
+<%= simple_form_for [@bar, @bar_beer] do |f| %> 
+<div class="section1">
+  <input name="beer_name" type="search" class="input-bar_beer-new" placeholder="Quel est le nom de la bière ?"/>
+  <%= link_to "#section2" do %>
+    <div class="fas fa-check-circle btn btn-light"></div>
+  <% end %>
  </div>
 
-<div style="margin: 20px">
-<%= f.input :quantity, input_html: { class: "input-style", placeholder:"Combien de litres veux-tu sauver ?"} %>
-</div>
-
-<div style="margin: 20px">
-<%= f.input :selling_price, input_html: { class: "input-style", placeholder:"À quel prix ?" } %>
-</div>
-
-<div style="margin: 20px">
-<%= f.button :submit, "Créer ma nouvelle bière", { class: "btn-gradient-rose" } %>
-</div>
-
+<div id="section2">
+<%= f.input :quantity, input_html: { class: "input-bar_beer-new", placeholder:"Combien de litre(s) veux-tu sauver ?" } %>
+<%= link_to "#section3" do %>
+  <div class="fas fa-check-circle btn btn-light"></div>
 <% end %>
+</div>
+
+<div id="section3">
+<%= f.input :selling_price, input_html: { class: "input-bar_beer-new", placeholder:"À quel prix ?" } %>
+<%= link_to "#section4" do %>
+<div class="fas fa-check-circle btn btn-light"></div>
+<% end %>
+</div>
+
+<div id="section4">
+<%= link_to dashboard_path do %>
+<button type="button" class="btn btn-info" id="btn-submit">
+<%= f.button :submit, input_html: { class: "btn-submit" } %>
+<% end %> 
+</button>
+</div>
+<% end %> 
 
   <div style="margin: 50px"></div>
 </div>

@@ -20,3 +20,8 @@
 
 // custom devise
 @import "custom/devise_styles";
+
+body {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
