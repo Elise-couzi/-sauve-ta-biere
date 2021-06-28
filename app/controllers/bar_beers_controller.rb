@@ -22,16 +22,13 @@ class BarBeersController < ApplicationController
       @bar_beer = BarBeer.new(bar_beer_params)
       @bar_beer.beer = @beer
       @bar_beer.bar = @bar
-      authorize @bar_beer
       if @bar_beer.save!
         redirect_to dashboard_path
       else
-        raise
         render :new
       end
-    else
-      raise
     end
+    authorize @bar_beer
   end
 
   def edit
