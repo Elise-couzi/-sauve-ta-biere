@@ -177,12 +177,12 @@ order4 = Order.create!(state:"en attente", paid_at:Date.new(2021, 02, 6), user: 
 puts "#{Order.count} commandes ajoutées"
 
 order_beer1 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers1, order: order1)
-order_beer2 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers1, order: order1)
+order_beer2 = OrderBeer.create!(quantity:2, buying_price:3, bar_beer: bar_beers2, order: order1)
 order_beer3 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers1, order: order2)
-order_beer3 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers1, order: order2)
-order_beer5 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers1, order: order3)
-order_beer6 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers1, order: order3)
-order_beer7 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers1, order: order4)
+order_beer3 = OrderBeer.create!(quantity:3, buying_price:3, bar_beer: bar_beers2, order: order2)
+order_beer5 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers3, order: order3)
+order_beer6 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers3, order: order3)
+order_beer7 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers3, order: order4)
 
 
 puts "#{OrderBeer.count} détails de commandes ajoutées"
