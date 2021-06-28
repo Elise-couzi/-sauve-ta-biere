@@ -1,10 +1,14 @@
 class CommandsController < ApplicationController
-
   def index
-    @orders = Order.all
+    @user = current_user
+    @bar = @user.bar
     @bar_beers = policy_scope(BarBeer).where(bar: @bar).includes(:beer)
-    # @total_price_per_beer = order_beers.quantity * order_beers.buying_price
-    
+    @order_beers = OrderBeer.where(bar_beer_id: @bar_beers)
+    list_id =[]
+    @order_beers.each do |order_beer|
+    list_id << order_beer.order_id
+    end
+    @orders = Order.where(id: list_id)
   end
 
 end
