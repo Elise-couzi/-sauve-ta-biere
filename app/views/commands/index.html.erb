@@ -7,8 +7,8 @@
   </div>
 </div>
 
-<% @orders.each do |order| %>
 <div class="container">
+<% @orders.each do |order| %>
   <div class="container card-command"  style="margin-top:20px;">
   <div class="card-contact-info">
   <div class="container user-contact">
@@ -16,28 +16,26 @@
       <p class="small-text"><%=order.state  %></p>
     </div>
     <div class="container info-commands">
-      <p style="font-weight:bold; margin-bottom:0;">commande #20</p>
+      <p style="font-weight:bold; margin-bottom:0;">commande #<%=order.id  %></p>
       <p class="small-text">payée le 22/06/2021 à 20h20</p>
     </div>
   </div>
 
-<% order.order_beers.each do |order_beer| %>
     <div class="container">
-
+    <% order.order_beers.each do |order_beer| %>
           <div class="beers-card-infos">
            <div>
               <p style="color:orange; font-weight:bold;"><%= order_beer.quantity %> L</p>
             </div>
             <div>
-            
               <h5 style="font-weight:bold; font-size:14px; margin-bottom:0;"><%= order_beer.bar_beer.beer.name %> </h5>
               <p class="small-text"><%= order_beer.bar_beer.beer.category %>, <%= order_beer.bar_beer.beer.alcohol_degree %>°</p>
             </div>
-           <div>
+          <div>
            <p class="small-text"><%= order_beer.buying_price %>€</p>
-           </div>
+          </div>
             <div class="bloc-price">
-              <h5 style="font-weight:bold;"><%= @total_price_per_beer %> €</h5>
+              <h5 style="font-weight:bold;"><%= order_beer.buying_price * order_beer.quantity  %> €</h5>
             </div>
           </div>
            <% end %>
@@ -45,11 +43,24 @@
   <div class="container total">
     <div class="container total-info">
       <h3 style="font-weight:bold; margin-bottom:0;">Total</h3>
-      <p class="small-text">2 litres de bières sauvés!</p>
+      <p class="small-text">
+      <% total_qty = 0 %>
+      <% order.order_beers.each do |order_beer| %>
+        <% total_qty += order_beer.quantity %>
+      <% end %>
+      <%= total_qty %> litres de bières sauvés!
+      </p>
     </div>
     <div class="container total-price">
-    <h3 style="font-weight:bold;">10 €</h3>
+    <h3 style="font-weight:bold;">
+    <% total = 0 %>
+    <% order.order_beers.each do |order_beer| %>
+    <% total += order_beer.buying_price * order_beer.quantity %>
+    <% end %>
+    <%= total %> €
+    </h3>
     </div>
+    
   </div>
     <div class="container btn-command" style="margin-bottom:20px;">
     <%= link_to 'Valider', root_path, class: "btn-gradient-rose btn-valider-command" %>
