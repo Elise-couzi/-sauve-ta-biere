@@ -45,14 +45,22 @@
     <p> Aujourd'hui 18h00 - 20h00</p><!-- à aller chercher dans la table schédule-->
     </div>
     <div style="margin: 30px"></div>
+
+      <div class="container elmt-center">
+      <%= link_to new_bar_bar_beer_path(@bar), class: "link" do %>
+      <div class="fas fa-plus-circle btn-jaune"></div>
+      <div style="color: orange"></div>
+      <% end %>
+      </div>
+
     <div>
     <%@bar_beers.each do |bar_beer| %> <!--  ajouter le prix initial -->
       <div class="beers-card">
-        <%= link_to root_path, class: 'link' do %>
           <div class="beers-card-infos">
             <div style="padding-left: 10px">
-
+              <%= link_to edit_bar_beer_path(bar_beer), class: 'link' do %>
               <i class="fas fa-edit" style="color:orange; font-weight: medium;"></i>
+              <%end%>
             </div>
             <div>
               <h6 class="card-title"><%= bar_beer.beer.name%> </h6>
@@ -64,20 +72,14 @@
             <div>
               <p><%= bar_beer.selling_price%>€ / L</p>
             </div>
-              <div class="icone-cards"><i class="fas fa-times" style="color:orange; font-weight: medium;"></i></div>
 
             </div>
-        <%end%>
       </div>
     <%end%>
     <div style="margin: 50px"></div>
   </div>
 
-    <div class="container elmt-center">
-    <%= link_to new_bar_bar_beer_path(@bar), class: "link" do %>
-    <div class="fas fa-plus-circle btn-jaune"></div>
-    <% end %>
-    </div>
+
     <div style="margin: 50px"></div>
   </div>
 
