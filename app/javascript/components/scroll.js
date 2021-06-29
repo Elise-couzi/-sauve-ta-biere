@@ -1,6 +1,6 @@
 
 const initScroll = () => {
-  console.log("hello");
+  
 
   const buttons = document.querySelectorAll(".btn-scroll");
   console.log(buttons);

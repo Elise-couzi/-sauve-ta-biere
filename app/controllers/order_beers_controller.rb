@@ -5,10 +5,18 @@ class OrderBeersController < ApplicationController
     # NEW
     # recup la beer (id)
     # recup la quantity par la modal (params : beer_id quantity)
-    # creer le order_beer avec ces 2 infos (params)
-    @order_beer = policy_scope(OrderBeer).find_by(id: params[:id])
+    # creer le order_beer avec ces 2 infos (params
+    @order = Order.find_by(user:current_user,state:"cart")
+    if @order.nil?
+      @order = Order.create!(user: current_user, state: "cart")
+    end
+    @order_beer = OrderBeer.new(order_beer_params)
+    @order_beer.order = @order
+    @bar_beer = BarBeer.find(params[:bar_beer_id])
+    @order_beer.bar_beer = @bar_beer
     authorize @order_beer
-    @order_beer = BarBeer.new(params[:beer_id, :quantity])
+    @order_beer.save
+    redirect_to bar_bar_beers_path(@bar_beer.bar)
   end
 
   def add_quantity
@@ -35,5 +43,9 @@ class OrderBeersController < ApplicationController
 
   def set_order_beer
     @order_beer = OrderBeer.find(params[:id])
+  end
+
+  def order_beer_params
+  params.require(:order_beer).permit(:quantity, :buying_price)
   end
 end
