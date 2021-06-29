@@ -1,3 +1,23 @@
+.avatar-bar {
+  position: relative;
+  top: -60px;
+  height: 120px;
+  width: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 5px solid #FCF8F3;
+  background-size: contain;
+}
+
+#edit-bar{
+  position: relative;
+  top: -185px;
+  right: -49px;
+  background-color: #FCF8F3;
+  padding: 10px;
+  border-radius: 50%;
+}
+
 .beers-card {
   background-color: white;
   margin: 10px;
@@ -8,14 +28,6 @@
   border-radius: 28px;
 }
 
-.bannerbeer {
-  background-size: cover;
-  background-position: center;
-  margin-top: -100px;
-  height: 280px;
-  width: 100%;
-//   border-radius: 0px 0px 0px 28px;//
-}
 
 .beers-card-infos {
   display: flex;
@@ -24,31 +36,8 @@
   align-items: center;
 }
 
-.avatar-bar {
-  position: absolute;
-  left: 30px;
-  top: 185px;
-}
-
-.title-bar {
-  position: absolute;
-  display:flex;
-  left: 140px;
-  top: 210px;
-  color: white;
-}
-
-.address-bar {
-  position: absolute;
-  left: 165px;
-  top: 253px;
-}
-
-.img-bar {
-  position: absolute;
-  left: 140px;
-  top: 250px;
-  width: 15px;
+.address-icon {
+  margin-right: 6px;
 }
 
 .link {
@@ -60,7 +49,3 @@
   text-decoration: none;
 }
 
-#edit-bar{
-  padding-left: 10px;
-
-}
