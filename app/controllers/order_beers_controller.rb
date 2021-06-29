@@ -20,6 +20,7 @@ class OrderBeersController < ApplicationController
   end
 
   def add_quantity
+    # if @order_beer.quantity >= bar_beer.quantity
     @order_beer.quantity += 1
     authorize @order_beer
     @order_beer.save
@@ -27,6 +28,7 @@ class OrderBeersController < ApplicationController
   end
 
   def remove_quantity
+    # if @order_beer.quantity < @bar_beer.quantity
     @order_beer.quantity -= 1
     authorize @order_beer
     @order_beer.save
@@ -34,7 +36,7 @@ class OrderBeersController < ApplicationController
   end
 
   def destroy
-    @order_beers.destroy
+    @order_beer.destroy
     authorize @order_beer
     redirect_to orders_path
   end

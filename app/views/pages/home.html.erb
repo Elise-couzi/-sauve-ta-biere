@@ -29,68 +29,68 @@
   </div>
 </div>
 
-<div style="padding: 80px"></div>
+<div style="padding: 50px"></div>
 
 <div class="img-home2"><img src="https://res.cloudinary.com/dduubmloj/image/upload/v1624568727/beer-glass_tm3gpc.png" alt=""></div>
 <div class="container">
-  <h1 style="font-weight: bold;">LES PRESSIONS, C'EST PRÉCIEUX !</h1>
-  <h5 style="color: orange;">SAUVEZ DE DÉLICIEUSES BIÈRES PRESSION</h5>
+  <h2 style="font-weight: bold; color: orange;">LES PRESSIONS, C'EST PRÉCIEUX !</h2>
 </div>
 
 <div style="padding: 20px"></div>
 
 <div class="container elmt-center">
-  <%= link_to 'Bières à sauver', bars_path, class: "btn-gradient-rose" %>
+  <%= link_to 'Sauver des bières', bars_path, class: "btn-gradient-rose" %>
 </div>
 
 <div style="padding: 30px"></div>
 
-<!-- <div class="container">
-  <h2>Components :</h2>
-      <%= link_to 'Home', root_path, class: "btn-gradient-rose" %>
-      <%= link_to 'Home', root_path, class: "btn-gradient-jaune" %>
-      <%= link_to '', root_path, class: "fas fa-plus-circle btn-rose" %>
-      <%= link_to '', root_path, class: "fas fa-plus-circle btn-jaune" %>
-
-      <i class="fas fa-plus btn-rose"></i>
-      <i class="fas fa-minus btn-rose"></i>
-      <i class="fas fa-times btn-jaune"></i>
-      <i class="fas fa-check-circle btn-valid-rose btn-large"></i>
-      <i class="fas fa-times-circle btn-pending-jaune btn-large"></i>
-      <i class="fas fa-edit btn-jaune"></i>
-      <i class="fas fa-chevron-left btn-arrow-grey"></i>
-      <i class="fas fa-chevron-left btn-arrow-white"></i>
+<div class="container">
+  <h4 style="font-weight: bold;">SAUVEZ DE DÉLICIEUSES BIÈRES PRESSION</h4>
+  <h4 style="font-weight: bold; color: orange;">Et à un prix avantageux !</h4>
+  <div style="padding: 6px"></div>
+  <p>Le gaspillage, c’est fini ! Aidez-nous à ne plus gâcher une seule goutte de bière. Comment ? Rien de plus simple : connectez-vous, choisissez vos bières et venez les chercher. Les bières pressions sont mises en bouteilles consignées, prêtes à être dégustées. Tout ça à un prix avantageux ! Alors, qu'attendez-vous pour essayer ?</p>
 </div>
 
-<div class="container container-pop-up">
-<div class="container test-pop-up">
-      <div class="pop-up">
-       <i class="fas fa-times btn-close"></i>
-      <div class="pop-up-content">
-            <h4><strong>Commande #19</strong></h4>
-            <p>Statut: <strong>en attente</strong></p>
-      </div>
-            <%= link_to 'Valider la commande', root_path, class: "btn-gradient-rose" %>
-      </div>
+
+<div class="consigne container elmt-center" style="padding: 50px">
+  <img class="img-home-beers" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624955048/beer_prqkqa.png" alt="beers">
+  <h4 style="font-weight: bold;">Une seule consigne : ramener la bouteille !</h4>
+  <p>En partenariat avec <strong>Jean Bouteille</strong></p>
 </div>
 
-<div class="container test-pop-up-two">
-      <div class="pop-up">
-      <i class="fas fa-times btn-close"></i>
-            <div class="pop-up-content">
-                  <h4><strong>Commande #19</strong></h4>
-                  <p>Bravo!</p>
-                  <p>Vous avez sauvé des bières!</p>
-            </div>
-      </div>
+<div class="container elmt-center">
+  <%= link_to 'Sauver des bières', bars_path, class: "btn-gradient-rose" %>
 </div>
+
+<div style="padding: 30px"></div>
+
+<div class="statistiques">
+  <div>
+    <h1>9,6</h1>
+    <p><strong>millions d’utilisateurs en France</strong> sauvent déjà des bières chez...</p>
+  </div>
+  <div>
+    <h1>19 998</h1>
+    <p><strong>Bars, restaurants, cafés, brasseries</strong> (et bien plus encore), ce qui représente...</p>
+  </div>
+  <div>
+    <h1>25,6</h1>
+    <p><strong>Bières sauvées !</strong></p>
+  </div>
 </div>
  -->
 
 
+<div style="padding: 40px"></div>
 
-<div style="padding: 30px"></div>
 
+
+<div class="container elmt-center">
+  <%= link_to 'Sauver des bières', bars_path, class: "btn-gradient-rose" %>
+</div>
+
+
+<div style="padding: 70px"></div>
 
 <div class="navbar fixed-bottom navbar-app">
 
@@ -109,9 +109,9 @@
   </li>
 
   <li class="navbar-nav" style="text-align: center">
-    <%= link_to "/", class: "nav-link" do %>
+    <%= link_to "/orders", class: "nav-link" do %>
     <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg" %>
-    <p>Pannier</p>
+    <p>Panier</p>
     <% end %>
   </li>
 
