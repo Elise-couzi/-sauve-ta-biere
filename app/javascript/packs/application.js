@@ -27,6 +27,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initScroll } from '../components/scroll';
+import {showModal } from '../components/bar_beer';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initScroll();
+  showModal();
 });
