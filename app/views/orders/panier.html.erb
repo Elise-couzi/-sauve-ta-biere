@@ -39,7 +39,7 @@
       
   <div class="bottom-card-cart">
    <div class="card-price-beer">
-      <p class="card-text price-panier"><%= order_beer.buying_price %> €</p>
+      <p class="card-text price-panier"><%= order_beer.amount * order_beer.quantity %> €</p>
     </div>
     
     <div class="add-remove">
@@ -50,7 +50,8 @@
       </div>
 
       <div class="quantity">
-        <p class="quantity-title"><%= order_beer.quantity %></p>
+        <p class="quantity-title"><%= order_beer.quantity %></p> 
+        <% @order.amount_total += order_beer.amount * order_beer.quantity %>
       </div>
 
       <div class="add">
@@ -66,7 +67,6 @@
   <% end  %>
   
 <p>Amount: <%= humanized_money_with_symbol(@order.amount_total) %></p>
-<p>Amount: <%= humanized_money_with_symbol(@order.order_beers.last.amount_cents) %></p>
   
   <div class="container elmt-center container-paiement">
     <%= link_to 'Paiement', root_path, class: "btn-gradient-rose btn-panier" %>
