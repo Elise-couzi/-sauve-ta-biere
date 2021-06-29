@@ -1,0 +1,88 @@
+.header-arrow {
+  display: flex;
+}
+.arrow-bloc {
+  flex: 1;
+}
+.title-panier {
+  padding: 16px;
+  margin: 0 auto;
+}
+.panier-card {
+  padding: 16px;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  color: black;
+  border-radius: 28px;
+  margin: 10px auto;
+}
+.card-notif {
+  display: block;
+  padding: 2px 16px;
+}
+.img-panier {
+  // display: flex;
+  border-radius: 8px;
+  background-color: white;
+  height: 56px;
+  width: 56px;
+  padding: 2px;
+}
+.cart-item-round {
+  position: absolute;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin-top: -60px;
+  margin-left: 42px;
+  padding: 2px;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  background-color: orange;
+}
+.add-remove {
+ display: flex;
+  margin-left: 33px;
+}
+.quantity {
+  padding: 0 20px;
+}
+.panier-card .delete {
+  // margin-top: 16px;
+  // padding-left: 120px;
+  // position: absolute;
+  margin-left: -24px;
+  padding-left: 320px;
+  position: absolute;
+}
+.card-price-beer {
+  display: flex;
+  margin-right: 156px;
+  margin-top: -6px;
+}
+.price-panier {
+  font-weight: bold;
+  font-size: 24px;
+}
+.title-cart-beer {
+  display: flex;
+}
+.litres {
+  margin: 0 16px;
+}
+.quantity-title {
+  font-size: 24px;
+  margin: -6px;
+  font-weight: bold;
+  }
+.bottom-card-cart {
+  display: inline-flex;
+}
+.btn-panier {
+  padding: 12px 76px;
+}
+.container-paiement {
+  padding: 24px;
+}
