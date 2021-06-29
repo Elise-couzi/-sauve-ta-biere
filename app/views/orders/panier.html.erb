@@ -1,4 +1,5 @@
 <div class="container">
+
 <div class="container header-arrow">
   <div class="container arrow-bloc" style="padding-top: 20px;">
     <a href="javascript:history.back()"><i class="fas fa-chevron-left btn-arrow-grey"></i></a>
@@ -63,10 +64,10 @@
   </div>
     
   <% end  %>
-
-
-<%= console %>
-
+  
+<p>Amount: <%= humanized_money_with_symbol(@order.amount_total) %></p>
+<p>Amount: <%= humanized_money_with_symbol(@order.order_beers.last.amount_cents) %></p>
+  
   <div class="container elmt-center container-paiement">
     <%= link_to 'Paiement', root_path, class: "btn-gradient-rose btn-panier" %>
   </div>
