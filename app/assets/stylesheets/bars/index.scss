@@ -1,33 +1,67 @@
+.container .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .card-bar {
   overflow: hidden;
   background: white;
   border-radius: 28px;
-  margin: 10px;
+  margin-bottom: 30px;
   display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  padding: 20px;
+  padding-bottom: 40px;
 }
 
-.card-bar-infos img {
+.beer-type {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: -25px;
+}
+
+.photo-bar {
   width: 100%;
   object-fit: cover;
   height: 200px;
 }
 
+.logo-bar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  top: -40px;
+  border: 5px solid white;
+  background-size: contain;
+}
+
+.beer-type-infos {
+  background-color: orange;
+  color: white;
+  border-radius: 28px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 11px;
+  margin: 6px;
+  position: relative;
+  top: 40px;
+  left: 10px;
+}
+
 .card-bar h2 {
   font-size: 18px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: -20px;
 }
 
 .card-bar p {
   font-size: 12px;
   opacity: .7;
-  margin: 0;
-}
-
-.card-bar .card-bar-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+  margin: 0
 }

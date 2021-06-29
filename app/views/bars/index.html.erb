@@ -19,20 +19,23 @@
     <!-- Liste -->
     <div style="margin: 50px"></div>
 
-      <div class="row">
+      <div class="container elmt-center cards col-12">
         <% @bars.each do |bar| %>
           <% if bar.bar_beers.size >0  %>
           <%= link_to bar_bar_beers_path(bar), class: 'link' do %>
-          <div class="card-bar col-12">
+          <div class="card-bar">
             <div class="card-bar-infos">
-                <img src="<%= bar.photo %>" alt="">
-                <div>
-                  <h2><%= bar.name %></h2>
-                  <p><%= bar.address %></p>
+              <div class="beer-type">
+                    <%bar.bar_beers.each do |bar_beer| %>
+                    <div class="beer-type-infos">
+                    <%= bar_beer.beer.name %> : <%= bar_beer.quantity %>L
+                    </div>
+                    <% end %>
                 </div>
-                  <%bar.bar_beers.each do |bar_beer| %>
-                  <p>Sauve <%= bar_beer.quantity  %>L de <%= bar_beer.beer.name  %> ! </p>
-                  <% end %>
+                <img class="photo-bar" src="<%= bar.photo %>" alt="">
+                <img class="logo-bar" src="<%= bar.logo %>" alt="">
+                <h2><%= bar.name %></h2>
+                <p class="address-bar"><p><i class="fas fa-map-marker-alt address-icon"></i><%= bar.address %></p>
               <% end %>
             </div>
           </div>
