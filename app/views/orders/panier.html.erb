@@ -1,64 +1,107 @@
 <div class="container">
-<h1>Mon panier</h1>
-<%= image_tag("https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg", width: "8%") %>
-  <%= @order.order_beers.count  %>
-  <p>************************************</p>
-<% @order.order_beers.each do  |order_beer| %>
-  <%= order_beer.beer.name %>
-    <p>************************************</p>
-  <p><%= order_beer.buying_price %> €</p>
-    <p>************************************</p>
- <p>1 L</p>
-    <p>************************************</p>
-  <p><%= order_beer.beer.category %>, <%= order_beer.beer.alcohol_degree %>°</p>
+<div class="container header-arrow">
+  <div class="container arrow-bloc" style="padding-top: 20px;">
+    <a href="javascript:history.back()"><i class="fas fa-chevron-left btn-arrow-grey"></i></a>
+  </div>
+  <div class="container title-panier">
+    <h3>Mon panier</h3>
+  </div>
 
-  <p>************************************</p>
-  <%= link_to add_order_beer_path(order_beer), remote: true, method: :patch do %>
-    <i class="fas fa-plus btn-rose"></i>
-  <% end  %>
-
-<p><%= order_beer.quantity %> litres</p>
-
-  <%= link_to remove_order_beer_path(order_beer), remote: true, method: :patch do %>
-    <i class="fas fa-minus btn-rose"></i>
-  <% end %>
-<p>************************************</p>
-  <%= link_to order_beer_path(order_beer), remote: true, method: :delete,  data: { confirm: "Veux tu vraiment supprimer ?" } do %>
-    <i class="fas fa-times btn-jaune"></i>
-  <% end %> 
-
-
-<% end  %>
-
+  <div class="card-notif">
+    <div class="img-panier">
+      <%= image_tag("https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg") %>
+    </div>
+    <div class="cart-item-round">
+      <%= @order.order_beers.count  %>
+    </div> 
+  </div>
 </div>
 
-<div class="navbar fixed-bottom navbar-app">
 
+<div class="container">
+
+  <% @order.order_beers.each do  |order_beer| %>
+
+  <div class="panier-card">
+    <div class="delete delete-panier">
+      <%= link_to order_beer_path(order_beer), remote: true, method: :delete,  data: { confirm: "Veux tu vraiment supprimer ta bière ?" } do %>
+        <i class="fas fa-times btn-jaune"></i>
+      <% end %> 
+    </div>
+
+  <div class="title-cart-beer">
+    <h5 class="card-title"><%= order_beer.beer.name %></h5>
+    <p class="litres" style="color:orange; font-weight:bold; font-size:16px;">1 L</p>
+  </div>
+      
+    <p style="font-size:14px; text-transform:capitalize;"><%= order_beer.beer.category %>, <%= order_beer.beer.alcohol_degree %>°</p>
+      
+  <div class="bottom-card-cart">
+   <div class="card-price-beer">
+      <p class="card-text price-panier"><%= order_beer.buying_price %> €</p>
+    </div>
+    
+    <div class="add-remove">
+      <div class="remove">
+        <%= link_to remove_order_beer_path(order_beer), method: :patch do %>
+          <i class="fas fa-minus btn-rose" style="font-size: 24px;"></i>
+        <% end %>
+      </div>
+
+      <div class="quantity">
+        <p class="quantity-title"><%= order_beer.quantity %></p>
+      </div>
+
+      <div class="add">
+        <%= link_to add_order_beer_path(order_beer), method: :patch do %>
+          <i class="fas fa-plus btn-rose" style="font-size: 24px;"></i>
+        <% end  %>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+    
+  <% end  %>
+
+
+<%= console %>
+
+  <div class="container elmt-center container-paiement">
+    <%= link_to 'Paiement', root_path, class: "btn-gradient-rose btn-panier" %>
+  </div>
+</div>
+
+
+<div class="navbar fixed-bottom navbar-app">
   <li class="navbar-nav" style="text-align: center">
     <%= link_to "/", class: "nav-link active" do %>
-    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
-    <p>Home</p>
+      <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
+      <p>Home</p>
     <% end %>
   </li>
 
   <li class="navbar-nav" style="text-align: center">
     <%= link_to "/bars", class: "nav-link" do %>
-    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624702421/noun_map_pin_661377_rco7b5.svg" %>
-    <p>Parcourir</p>
+      <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624702421/noun_map_pin_661377_rco7b5.svg" %>
+      <p>Parcourir</p>
     <% end %>
   </li>
 
   <li class="navbar-nav" style="text-align: center">
     <%= link_to "/orders", class: "nav-link" do %>
-    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg" %>
-    <p>Panier</p>
+      <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg" %>
+      <p>Panier</p>
     <% end %>
   </li>
 
   <li class="navbar-nav" style="text-align: center">
     <%= link_to "/", class: "nav-link" do %>
-    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
-    <p>Profil</p>
+      <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+      <p>Profil</p>
     <% end %>
   </li>
 </div>
+
+</div>
+

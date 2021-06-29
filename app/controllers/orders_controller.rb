@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
     @user = current_user
     @order = policy_scope(Order).find_by(user_id: current_user)
     authorize @order
+    # @bar_beer = BarBeer.fin@orderd_by(params[:beer_id])
     # @order = Order.find(params[:order_beer_id])
     # depuis son panier
     # le current_user peut ajouter ou supprimer une beer (order_beer)
