@@ -1,40 +1,45 @@
-<div class= "container" style="padding-left: 40px; padding-top: 20px;">
-  <a href="javascript:history.back()"><i class="fas fa-chevron-left btn-arrow-white"></i></a>
+<div class="navbar-top" style="background-size: cover; background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @bar.photo %>);">
+  <li class="navbar-nav">
+    <div class= "container" style="margin-top: 25px;">
+    <a href="javascript:history.back()"><i class="fas fa-chevron-left btn-arrow-white"></i></a>
+    </div>
+  </li>
+  <div class="navbar-right">
+  <li class="navbar-nav" style="margin-top: 20px; ">
+      <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "head-link-btn" %>
+      <% else %>
+          <%= link_to 'Login', new_user_session_path, class: "head-link-btn" %>
+      <% end %>
+  </li>
+  </div>
 </div>
-
-
-<div class="bannerbeer" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @bar.photo %>);"></div>
-
-<div>
-  <img class="avatar-bar" alt="La Biche et Le Renard" src="https://res.cloudinary.com/dduubmloj/image/upload/v1624546309/Biche-renard-logo-01_eg2xwu.png" />
-</div>
-
-<div class="title-bar"><h4><%= @bar.name %></h4>
-<%=link_to edit_bar_path(@bar) do %>
-<i id="edit-bar" class="fas fa-edit" style="color:orange; font-weight: medium;"></i>
-<% end %>
-</div>
-
-<div class="img-bar"><img src="https://res.cloudinary.com/dduubmloj/image/upload/v1624547359/map-marker-alt-solid_mtilye.svg" alt="map-marker"></div>
-<div class="address-bar"><p><%= @bar.address %></p></div> <!-- mettre address -->
-
-<div class="container">
-<div style="padding: 40px"></div>
 
 <div class="container elmt-center">
-  <h2>Salut <%= @bar.user.first_name %> !</h2>
-  <p>Bienvenue dans ton dashboard</p>
+  <img class="avatar-bar" alt="" src="<%= @bar.logo %>" />
+  <div>
+    <%=link_to edit_bar_path(@bar) do %>
+    <i id="edit-bar" class="fas fa-edit" style="color:orange; font-weight: medium;"></i>
+    <% end %>
+  </div>
+<div style="margin: -40px"></div>
+  <p style="color: orange";>Salut <%= @bar.user.first_name %> !</p>
+  <h4><%= @bar.name %></h4>
+  <div class="address-bar"><p><i class="fas fa-map-marker-alt address-icon"></i><%= @bar.address %></p></div>
 </div>
 
-<div style="padding: 40px"></div>
+
+
+<div class="container">
+<div style="padding: 20px"></div>
 
 <!-- Nav tabs -->
 <ul class="nav nav-pills nav-fill">
   <li class="nav-item active">
-    <a class="nav-link pills-left" data-toggle="tab" href="#bières">Mes bières</a>
+    <a class="nav-link pills-left" data-toggle="tab" href="#bières">Bières</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link pills-right" data-toggle="tab" href="#stats">Mes stats</a>
+    <a class="nav-link pills-right" data-toggle="tab" href="#stats">Stats</a>
   </li>
 </ul>
 <!-- Fin Nav tabs -->
