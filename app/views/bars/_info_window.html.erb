@@ -1,0 +1,11 @@
+<img src="<%= bar.logo %>" alt="" class="avatar" style="margin-bottom:10px;">
+<h3><%= bar.name %></h3>
+<p><%= bar.address %></p>
+
+
+
+<% if bar.bar_beers.size >0  %>
+<%= link_to "Sauver des bières !", bar_bar_beers_path(bar), style:"text-decoration: none; color: orange" %>
+<% else %>
+<%= "Pas de bières à sauver pour le moment !"  %>
+<% end %>

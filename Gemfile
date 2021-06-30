@@ -67,3 +67,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pundit'
 gem 'money-rails'
 gem 'stripe'
+gem 'geocoder'
