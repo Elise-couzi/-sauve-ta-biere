@@ -74,7 +74,6 @@
       <div class="total-quantity-panier">
       <% @order.amount_total = @beer_price %>
       <% @order.save %>
-      <p><%= humanized_money(@order.amount_total) %>€</p>
       <% total_saved = 0 %>
       <% @order.order_beers.each do | order_beer | %>
       <% total_saved += order_beer.quantity %>
@@ -89,9 +88,19 @@
     </div>
 
   <div class="container elmt-center container-paiement">
-    <%= link_to 'Paiement', checkout_path, class: "btn-gradient-rose btn-panier" %>
+    <button id="pay" class="btn-gradient-rose btn-panier">Paiement</button>
   </div>
 
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const paymentButton = document.getElementById('pay');
+    paymentButton.addEventListener('click', () => {
+      const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+      stripe.redirectToCheckout({
+        sessionId: '<%= @order.checkout_session_id %>'
+      });
+    });
+  </script>
 
 <div class="container" style="padding:70px">
 </div>

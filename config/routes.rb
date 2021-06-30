@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   get "/commands", to: "commands#index"
 
   get "/orders", to: "orders#panier"
+
   get "/checkout", to: "orders#checkout_session"
+
 
   resources :order_beers, only: [:create, :destroy] do 
     member do
@@ -29,6 +31,8 @@ Rails.application.routes.draw do
     end
   end
   
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
 
 # patch "/validate/:id", to: "order_beers#validate" , as: :validated
 # patch "/decline/:id", to: "order_beers#decline" , as: :declined
