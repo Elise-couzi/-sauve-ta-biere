@@ -21,25 +21,25 @@
 
   <div>
     <%@bar_beers.each do |bar_beer| %> <!--  ajouter le prix initial -->
-    <div id="Modalnumber<%=bar_beer.id%>" class="mymodal" tabindex="-1" data-modal=<%=bar_beer.id%>>
-          <div class="mymodal-dialog" >
-            <div class="mymodal-content">
-              <i class="fas fa-times btn-close myclose-button" data-selector="#Modalnumber<%=bar_beer.id%>" id="btnnumber<%=bar_beer.id%>"></i>
-              <h4><strong><%= bar_beer.beer.name%></strong></h4>
-              <p><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%> °</p>
-              <p class="p-description"><%= bar_beer.beer.description%></p>
-              <%= simple_form_for [bar_beer, OrderBeer.new] do |f| %>
-              <%= f.input :quantity, as: :hidden, input_html:{value: 1} %>
-              <%= f.input :buying_price, as: :hidden, input_html:{value: bar_beer.selling_price} %>
-              <%= f.input :amount_cents, input_html:{value: bar_beer.selling_price*100} %>
-              <%= f.submit "Ajouter au panier" %>
-              <% end %>
-            </div>
+
+      <div id="Modalnumber<%=bar_beer.id%>" class="mymodal" tabindex="-1" data-modal=<%=bar_beer.id%>>
+          <div class="mymodal-content">
+            <i class="fas fa-times btn-close myclose-button" data-selector="#Modalnumber<%=bar_beer.id%>" id="btnnumber<%=bar_beer.id%>"></i>
+            <h4><strong><%= bar_beer.beer.name%></strong></h4>
+            <p><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%> °</p>
+            <p class="p-description"><%= bar_beer.beer.description%></p>
+            <h4 style="color: orange"><%= bar_beer.selling_price%>€</h4>
+            <%= simple_form_for [bar_beer, OrderBeer.new] do |f| %>
+            <%= f.input :quantity, as: :hidden, input_html:{value: 1} %>
+            <%= f.input :buying_price, as: :hidden, input_html:{value: bar_beer.selling_price} %>
+            <%= f.input :amount_cents, as: :hidden, input_html:{value: bar_beer.selling_price*100} %>
+            <%= f.submit "Ajouter au panier", class: "btn-gradient-rose"%>
+            <% end %>
           </div>
-        </div>
-      <div class="beers-card mytrigger" data-beer-number=<%=bar_beer.id%>>
+      </div>
+    <div class="beers-card mytrigger" data-beer-number=<%=bar_beer.id%>>
       <!--  La modal ci dessous -->
-        
+
       <!--  Fin de la modal -->
           <div class="beers-card-infos">
             <div>
