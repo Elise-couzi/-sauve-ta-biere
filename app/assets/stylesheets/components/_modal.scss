@@ -24,18 +24,21 @@
         background-color: white;
         padding: 1rem 1.5rem;
         width: 24rem;
-        border-radius: 0.5rem;
+        border-radius: 28px;
+        text-align: center;
     }
+
     .myclose-button {
-        float: right;
+        position: absolute;
+        right: 20px;
         width: 1.5rem;
         line-height: 1.5rem;
         text-align: center;
         cursor: pointer;
         border-radius: 0.25rem;
-        background-color: lightgray;
+        opacity: 0.5;
     }
+
     .myclose-button:hover {
-        background-color: darkgray;
+        opacity: 1;
     }
-	
