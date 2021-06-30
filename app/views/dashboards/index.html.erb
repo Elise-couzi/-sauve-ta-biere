@@ -70,14 +70,13 @@
             <div>
               <h6 class="card-title"><%= bar_beer.beer.name%> </h6>
               <p class="card-categ"><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%>°</p>
+              <p class="card-quantity"><%= bar_beer.quantity %> L à sauver</p>
             </div>
             <div style="text-align: center;">
-              <p><%= bar_beer.selling_price%>€ / L</p>
-              <p class="card-quantity"><%= bar_beer.quantity %> L</p>
-              <p class="card-quantity">à sauver</p>
+              <h5><strong><%= bar_beer.selling_price%>€</strong> / L</h5>
             </div>
 
-            <div style="padding-left: 10px">
+            <div>
               <%= link_to edit_bar_beer_path(bar_beer), class: 'link' do %>
               <i class="fas fa-edit" style="color:orange; font-weight: medium;"></i>
               <%end%>
