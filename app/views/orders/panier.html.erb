@@ -34,7 +34,7 @@
       <h5 class="card-title"><%= order_beer.beer.name %></h5>
     </div>
       
-    <p style="font-size:14px; text-transform:capitalize;"><%= order_beer.beer.category %>, <%= order_beer.beer.alcohol_degree %>°</p>
+    <p style="font-size:14px; text-transform:capitalize; margin:0 auto;"><%= order_beer.beer.category %>, <%= order_beer.beer.alcohol_degree %>°</p>
     <p style="font-size:14px; text-transform:capitalize;"><%= order_beer.bar_beer.bar.name %></p>
     
     <div class="bottom-card-cart">
@@ -70,7 +70,8 @@
       <% end  %>
     <div class="container total-card">
       <%# <p>Prix: <%= humanized_money_with_symbol(@order.order_beers.last.amount_cents) %>
-      <p>Total</p>
+
+      <div class="total-quantity-panier">
       <% @order.amount_total = @beer_price %>
       <% @order.save %>
       <p><%= humanized_money(@order.amount_total) %>€</p>
@@ -78,8 +79,13 @@
       <% @order.order_beers.each do | order_beer | %>
       <% total_saved += order_beer.quantity %>
       <% end %>
+      <p style="font-size:24px; font-weight:bold; margin:0 auto;">Total</p>
       <p style="font-size:14px">Merci ! Tu as sauvé <%= total_saved %> litres bières!</p>
+      </div>
       
+       <div class="total-price-panier">
+        <p><%= humanized_money(@order.amount_total) %>€</p>
+      </div>
     </div>
 
   <div class="container elmt-center container-paiement">
