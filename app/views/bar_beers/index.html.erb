@@ -21,8 +21,25 @@
 
   <div>
     <%@bar_beers.each do |bar_beer| %> <!--  ajouter le prix initial -->
-      <div class="beers-card">
-        <%= link_to root_path, class: 'link' do %>
+    <div id="Modalnumber<%=bar_beer.id%>" class="mymodal" tabindex="-1" data-modal=<%=bar_beer.id%>>
+          <div class="mymodal-dialog" >
+            <div class="mymodal-content">
+              <i class="fas fa-times btn-close myclose-button" data-selector="#Modalnumber<%=bar_beer.id%>" id="btnnumber<%=bar_beer.id%>"></i>
+              <h4><strong><%= bar_beer.beer.name%></strong></h4>
+              <p><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%> °</p>
+              <p class="p-description"><%= bar_beer.beer.description%></p>
+              <%= simple_form_for [bar_beer, OrderBeer.new] do |f| %>
+              <%= f.input :quantity, as: :hidden, input_html:{value: 1} %>
+              <%= f.input :buying_price, as: :hidden, input_html:{value: bar_beer.selling_price} %>
+              <%= f.submit "Ajouter au panier" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <div class="beers-card mytrigger" data-beer-number=<%=bar_beer.id%>>
+      <!--  La modal ci dessous -->
+        
+      <!--  Fin de la modal -->
           <div class="beers-card-infos">
             <div>
               <h5 class="card-title"><%= bar_beer.beer.name%> </h5>
@@ -35,10 +52,10 @@
               <h5><%= bar_beer.selling_price%>€</h5>
             </div>
           </div>
-        <%end%>
       </div>
     <%end%>
   </div>
+
 
 </div>
 <div style="padding: 100px"></div>

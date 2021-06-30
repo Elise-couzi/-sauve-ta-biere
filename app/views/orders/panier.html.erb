@@ -20,9 +20,9 @@
     </div>
   </div>
 
-
   <div class="container">
     <% @order.order_beers.each do  |order_beer| %>
+
 
     <div class="panier-card">
       <div class="delete delete-panier">
@@ -31,16 +31,29 @@
         <% end %> 
       </div>
 
-    <div class="title-cart-beer">
-      <h5 class="card-title"><%= order_beer.beer.name %></h5>
-      <p class="litres" style="color:orange; font-weight:bold; font-size:16px;">1 L</p>
+  <div class="title-cart-beer">
+    <h5 class="card-title"><%= order_beer.beer.name %></h5>
+    <p class="litres" style="color:orange; font-weight:bold; font-size:16px;">1 L</p>
+  </div>
+      
+    <p style="font-size:14px; text-transform:capitalize;"><%= order_beer.beer.category %>, <%= order_beer.beer.alcohol_degree %>°</p>
+      
+  <div class="bottom-card-cart">
+   <div class="card-price-beer">
+      <p class="card-text price-panier"><%= order_beer.amount * order_beer.quantity %> €</p>
     </div>
-        
-      <p style="font-size:14px; text-transform:capitalize;"><%= order_beer.beer.category %>, <%= order_beer.beer.alcohol_degree %>°</p>
-        
-    <div class="bottom-card-cart">
-    <div class="card-price-beer">
-        <p class="card-text price-panier"><%= order_beer.buying_price %> €</p>
+    
+    <div class="add-remove">
+      <div class="remove">
+        <%= link_to remove_order_beer_path(order_beer), method: :patch do %>
+          <i class="fas fa-minus btn-rose" style="font-size: 24px;"></i>
+        <% end %>
+      </div>
+
+      <div class="quantity">
+        <p class="quantity-title"><%= order_beer.quantity %></p> 
+        <% @order.amount_total += order_beer.amount * order_beer.quantity %>
+
       </div>
       
       <div class="add-remove">
@@ -71,9 +84,13 @@
     </div>
 
     
-    <div class="container elmt-center container-paiement">
-      <%= link_to 'Paiement', root_path, class: "btn-gradient-rose btn-panier" %>
-    </div>
+  <% end  %>
+  
+<p>Amount: <%= humanized_money_with_symbol(@order.amount_total) %></p>
+  
+  <div class="container elmt-center container-paiement">
+    <%= link_to 'Paiement', root_path, class: "btn-gradient-rose btn-panier" %>
+
   </div>
 
 
