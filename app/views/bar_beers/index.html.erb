@@ -44,11 +44,11 @@
           <div class="beers-card-infos">
             <div>
               <h5 class="card-title"><%= bar_beer.beer.name%> </h5>
-              <p class="card-text"><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%>°</p>
+              <p><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%>°</p>
               <p class="card-quantity"><%= bar_beer.quantity %> L à sauver</p>
             </div>
             <div>
-              <h5><strong><%= bar_beer.selling_price%>€</strong> / L</h5>
+              <h5 class="card-price" ><%= bar_beer.selling_price%>€ / L</h5>
             </div>
           </div>
       </div>
