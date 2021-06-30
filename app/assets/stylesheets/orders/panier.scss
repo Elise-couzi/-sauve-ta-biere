@@ -43,19 +43,16 @@
   background-color: orange;
 }
 .add-remove {
- display: flex;
-  margin-left: 33px;
+  display: flex;
+  position: absolute;
+  right: 48px;
 }
 .quantity {
   padding: 0 20px;
 }
 .panier-card .delete {
-  // margin-top: 16px;
-  // padding-left: 120px;
-  // position: absolute;
-  margin-left: -24px;
-  padding-left: 320px;
   position: absolute;
+  right: 48px;
 }
 .card-price-beer {
   display: flex;
@@ -85,4 +82,9 @@
 }
 .container-paiement {
   padding: 24px;
+}
+.total-card {
+  background-color: white;
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
 }
