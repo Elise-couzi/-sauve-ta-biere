@@ -26,11 +26,13 @@
           <div class="card-bar">
             <div class="card-bar-infos">
               <div class="beer-type">
-                    <%bar.bar_beers.each do |bar_beer| %>
-                    <div class="beer-type-infos">
-                    <%= bar_beer.beer.name %> : <%= bar_beer.quantity %>L
-                    </div>
+                <div class="beer-type-infos">
+                  <%qty_to_save = 0 %>
+                  <%bar.bar_beers.each do |bar_beer| %>
+                    <% qty_to_save += bar_beer.quantity %>
                     <% end %>
+                    <%= qty_to_save %> L à sauver
+                    </div>
                 </div>
                 <img class="photo-bar" src="<%= bar.photo %>" alt="">
                 <img class="logo-bar" src="<%= bar.logo %>" alt="">
