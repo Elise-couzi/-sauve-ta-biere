@@ -67,20 +67,20 @@
     <%@bar_beers.each do |bar_beer| %> <!--  ajouter le prix initial -->
       <div class="beers-card">
           <div class="beers-card-infos">
-            <div style="padding-left: 10px">
-              <%= link_to edit_bar_beer_path(bar_beer), class: 'link' do %>
-              <i class="fas fa-edit" style="color:orange; font-weight: medium;"></i>
-              <%end%>
-            </div>
             <div>
               <h6 class="card-title"><%= bar_beer.beer.name%> </h6>
               <p class="card-categ"><%= bar_beer.beer.category%>, <%= bar_beer.beer.alcohol_degree%>°</p>
             </div>
-            <div>
-              <p class="card-quantity"><%= bar_beer.quantity %> L à sauver</p>
-            </div>
-            <div>
+            <div style="text-align: center;">
               <p><%= bar_beer.selling_price%>€ / L</p>
+              <p class="card-quantity"><%= bar_beer.quantity %> L</p>
+              <p class="card-quantity">à sauver</p>
+            </div>
+
+            <div style="padding-left: 10px">
+              <%= link_to edit_bar_beer_path(bar_beer), class: 'link' do %>
+              <i class="fas fa-edit" style="color:orange; font-weight: medium;"></i>
+              <%end%>
             </div>
 
             </div>
