@@ -22,15 +22,16 @@ class OrdersController < ApplicationController
     payment_method_types: ['card'],
     line_items: [{
       name: @order.id,
-      amount: @order.amount_total,
+      amount: @order.amount_total_cents,
       currency: 'eur',
       quantity: 1
     }],
     success_url: orders_url(@order),
     cancel_url: orders_url(@order)
+    #orders ou order
   )
 
-  order.update(checkout_session_id: session.id)
+  @order.update!(checkout_session_id: session.id)
   redirect_to new_order_payment_path(@order)
   end
 
