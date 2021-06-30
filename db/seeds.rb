@@ -167,10 +167,10 @@ bar_beers20 = BarBeer.create!(quantity: 5, selling_price: 3 , beer: beer21, bar:
 puts "#{BarBeer.count} offres de bières ajoutées"
 
 
-order1 = Order.create!(state:"cart", paid_at:Date.new(2021, 8, 02), user: lapetitecouzi, amount_total_cents: 0)
-order2 = Order.create!(state:"cart", paid_at:Date.new(2021, 02, 6), user: vivi, amount_total_cents: 0)
-order3 = Order.create!(state:"cart", paid_at:Date.new(2021, 02, 6), user: flav, amount_total_cents: 0)
-order4 = Order.create!(state:"cart", paid_at:Date.new(2021, 02, 6), user: vaness,amount_total_cents: 0)
+order1 = Order.create!(state:"pending", paid_at:Date.new(2021, 8, 02), user: lapetitecouzi, amount_total_cents: 0)
+order2 = Order.create!(state:"pending", paid_at:Date.new(2021, 02, 6), user: vivi, amount_total_cents: 0)
+order3 = Order.create!(state:"pending", paid_at:Date.new(2021, 02, 6), user: flav, amount_total_cents: 0)
+order4 = Order.create!(state:"pending", paid_at:Date.new(2021, 02, 6), user: vaness,amount_total_cents: 0)
 
 
 puts "#{Order.count} commandes ajoutées"

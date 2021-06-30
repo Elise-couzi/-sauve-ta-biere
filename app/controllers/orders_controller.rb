@@ -13,4 +13,25 @@ class OrdersController < ApplicationController
     # recup l'order du current_user (particulier) => state / paid_at
     # @order = Order.current_user
   end
+
+  def checkout_session
+    @order = current_user.orders.find_by(state: 'pending')
+    @order_beers = @order.order_beers
+
+    session = Stripe::Checkout::Session.create(
+    payment_method_types: ['card'],
+    line_items: [{
+      name: @order.id,
+      amount: @order.amount_total,
+      currency: 'eur',
+      quantity: 1
+    }],
+    success_url: orders_url(@order),
+    cancel_url: orders_url(@order)
+  )
+
+  order.update(checkout_session_id: session.id)
+  redirect_to new_order_payment_path(@order)
+  end
+
 end

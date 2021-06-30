@@ -6,9 +6,9 @@ class OrderBeersController < ApplicationController
     # recup la beer (id)
     # recup la quantity par la modal (params : beer_id quantity)
     # creer le order_beer avec ces 2 infos (params
-    @order = Order.find_by(user: current_user, state: "cart")
+    @order = Order.find_by(user:current_user,state:"pending")
     if @order.nil?
-      @order = Order.create!(user: current_user, state: "cart")
+      @order = Order.create!(user: current_user, state: "pending")
     end
     @order_beer = OrderBeer.new(order_beer_params)
     @order_beer.order = @order
