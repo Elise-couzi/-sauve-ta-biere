@@ -43,7 +43,7 @@ class BarBeersController < ApplicationController
 
   def destroy
     @bar_beer.destroy
-    redirect_to bar_path
+    redirect_to dashboard_path
     authorize @bar_beer
   end
 
