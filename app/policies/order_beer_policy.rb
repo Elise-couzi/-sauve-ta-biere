@@ -12,7 +12,8 @@ class OrderBeerPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    true
+    # record.user == user
   end
 
   class Scope < Scope
