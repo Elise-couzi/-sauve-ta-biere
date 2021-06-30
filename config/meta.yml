@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Sauve ta bière !"
+meta_title: "Sauve ta bières ! - Les pressions c'est precieux"
+meta_description: "Le gaspillage, c’est fini ! Aidez-nous à ne plus gâcher une seule goutte de bière. Comment ? Rien de plus simple : connectez-vous, choisissez vos bières et venez les chercher. Les bières pressions sont mises en bouteilles consignées, prêtes à être dégustées. Tout ça à un prix avantageux ! Alors, qu'attendez-vous pour essayer ?"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
