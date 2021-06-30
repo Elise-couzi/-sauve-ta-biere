@@ -22,14 +22,19 @@ Rails.application.routes.draw do
   get "/commands", to: "commands#index"
 
   get "/orders", to: "orders#panier"
+
   get "/checkout", to: "orders#checkout_session"
 
   resources :order_beers, only: [:create, :destroy] do
+
     member do
       patch :add_quantity, as: :add
       patch :remove_quantity, as: :remove
     end
   end
+
+ 
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
 
 # patch "/validate/:id", to: "order_beers#validate" , as: :validated
