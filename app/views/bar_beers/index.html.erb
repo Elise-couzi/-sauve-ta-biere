@@ -31,6 +31,7 @@
               <%= simple_form_for [bar_beer, OrderBeer.new] do |f| %>
               <%= f.input :quantity, as: :hidden, input_html:{value: 1} %>
               <%= f.input :buying_price, as: :hidden, input_html:{value: bar_beer.selling_price} %>
+              <%= f.input :amount_cents, input_html:{value: bar_beer.selling_price*100} %>
               <%= f.submit "Ajouter au panier" %>
               <% end %>
             </div>
