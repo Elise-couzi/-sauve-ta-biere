@@ -1,0 +1,81 @@
+<div class="navbar-top-profil" style="background-size: cover; background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlcnxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60);">
+  <li class="navbar-nav">
+    <div class= "container" style="margin-top: 25px;">
+    <a href="javascript:history.back()"><i class="fas fa-chevron-left btn-arrow-white"></i></a>
+    </div>
+  </li>
+  <div class="navbar-right">
+  <li class="navbar-nav" style="margin-top: 20px; ">
+      <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "head-link-btn" %>
+      <% else %>
+          <%= link_to 'Login', new_user_session_path, class: "head-link-btn" %>
+      <% end %>
+  </li>
+  </div>
+</div>
+
+
+<div class="container elmt-center">
+  <img class="avatar-bar" alt="" src="<%= current_user.image %>" />
+  <p style="margin: -40px;color: orange";><%= current_user.first_name %></p>
+</div>
+
+<div style="padding: 40px"></div>
+
+<div class="container">
+  <h5>Bières sauvées !</h5>
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Etat</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.paid_at.strftime("%d/%m/%Y") %></td>
+      <td><%= @state[order.state] %></td>
+      <td><%= order.amount_total %>€</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+
+<div style="padding: 70px"></div>
+
+<div class="navbar fixed-bottom navbar-app">
+
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to "/", class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461167/noun_Beer_1696928_ev45ep.svg" %>
+    <p>Home</p>
+    <% end %>
+  </li>
+
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to "/bars", class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624702421/noun_map_pin_661377_rco7b5.svg" %>
+    <p>Parcourir</p>
+    <% end %>
+  </li>
+
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to "/orders", class: "nav-link" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg" %>
+    <p>Panier</p>
+    <% end %>
+  </li>
+
+  <li class="navbar-nav" style="text-align: center">
+    <%= link_to "/profil", class: "nav-link active" do %>
+    <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+    <p>Profil</p>
+    <% end %>
+  </li>

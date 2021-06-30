@@ -1,3 +1,11 @@
+.dash-edit {
+  text-align: end;
+  margin: -12px;
+  position: relative;
+  right: 12px;
+  top: 9px;
+}
+
 .icone-cards {
   position: relative;
   right: -20px;
@@ -48,10 +56,22 @@
 }
 
 .card-quantity {
-  color: orange;
+  background-color: orange;
+  color: white;
+  border-radius: 28px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   font-size: 12px;
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+.card-price {
+  margin-bottom: 0px;
 }
 
 .beers-card-infos p {
-  margin-bottom: 0px;
+  margin-bottom: 5px;
 }

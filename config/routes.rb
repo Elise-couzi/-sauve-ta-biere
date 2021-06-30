@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-   resources :bar_beers, only: [:edit, :update, :destroy] do 
+   resources :bar_beers, only: [:edit, :update, :destroy] do
     resources :order_beers, only:[:create]
    end
 
@@ -15,20 +15,27 @@ Rails.application.routes.draw do
 
   get "/pro", to: "pages#pro"
 
+  get "/profil", to: "pages#profil"
+
   get "/dashboard", to: "dashboards#index"
 
   get "/commands", to: "commands#index"
 
   get "/orders", to: "orders#panier"
+
   get "/checkout", to: "orders#checkout_session"
 
-  resources :order_beers, only: [:create, :destroy] do 
+  resources :order_beers, only: [:create, :destroy] do
+
     member do
       patch :add_quantity, as: :add
       patch :remove_quantity, as: :remove
     end
   end
-  
+
+ 
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
 
 # patch "/validate/:id", to: "order_beers#validate" , as: :validated
 # patch "/decline/:id", to: "order_beers#decline" , as: :declined
