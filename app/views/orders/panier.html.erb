@@ -67,9 +67,10 @@
   <% end  %>
   
 <p>Amount: <%= humanized_money_with_symbol(@order.amount_total) %></p>
+<%= console %>
   
   <div class="container elmt-center container-paiement">
-    <%= link_to 'Paiement', root_path, class: "btn-gradient-rose btn-panier" %>
+    <%= link_to 'Paiement', checkout_path, class: "btn-gradient-rose btn-panier" %>
   </div>
 </div>
 
