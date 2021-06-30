@@ -21,6 +21,7 @@
 
   <div>
     <%@bar_beers.each do |bar_beer| %> <!--  ajouter le prix initial -->
+
       <div id="Modalnumber<%=bar_beer.id%>" class="mymodal" tabindex="-1" data-modal=<%=bar_beer.id%>>
           <div class="mymodal-content">
             <i class="fas fa-times btn-close myclose-button" data-selector="#Modalnumber<%=bar_beer.id%>" id="btnnumber<%=bar_beer.id%>"></i>
@@ -31,6 +32,7 @@
             <%= simple_form_for [bar_beer, OrderBeer.new] do |f| %>
             <%= f.input :quantity, as: :hidden, input_html:{value: 1} %>
             <%= f.input :buying_price, as: :hidden, input_html:{value: bar_beer.selling_price} %>
+            <%= f.input :amount_cents, as: :hidden, input_html:{value: bar_beer.selling_price*100} %>
             <%= f.submit "Ajouter au panier", class: "btn-gradient-rose"%>
             <% end %>
           </div>

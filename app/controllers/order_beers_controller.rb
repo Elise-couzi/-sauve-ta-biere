@@ -48,6 +48,6 @@ class OrderBeersController < ApplicationController
   end
 
   def order_beer_params
-  params.require(:order_beer).permit(:quantity, :buying_price)
+  params.require(:order_beer).permit(:quantity, :buying_price, :amount_cents)
   end
 end
