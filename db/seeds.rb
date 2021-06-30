@@ -56,7 +56,7 @@ user36 = User.create!(first_name: 'Julie', last_name: 'Masseur', email: 'juliema
 user37 = User.create!(first_name: 'Francoise', last_name: 'Tatie', email: 'francoiset@email.com', password: 'azerty', manager: true)
 user38 = User.create!(first_name: 'Eugénie', last_name: 'Delalampe', email: 'eugénie@email.com', password: 'azerty', manager: true)
 user39 = User.create!(first_name: 'Marion', last_name: 'Yonyon', email: 'marion@email.com', password: 'azerty', manager: true)
-user40 = User.create!(first_name: 'Paula', last_name: 'Douzan', email: 'paula@email.com', password: 'azerty', manager: true)
+user40 = User.create!(first_name: 'Paula', last_name: 'Douzan', email: 'paula@email.com', password: 'azerty', manager: true, image: "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
 user41 = User.create!(first_name: 'Laetitia', last_name: 'Chandeleer', email: 'laetitia@email.com', password: 'azerty', manager: true)
 user42 = User.create!(first_name: 'Kevin', last_name: 'Teidje', email: 'kevin@email.com', password: 'azerty', manager: true)
 user43 = User.create!(first_name: 'Naomie', last_name: 'Campbell', email: 'naomiec@email.com', password: 'azerty', manager: true)
