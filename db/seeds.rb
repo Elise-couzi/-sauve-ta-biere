@@ -17,12 +17,12 @@ User.destroy_all
 
 puts "nettoyage en cours"
 
-lapetitecouzi = User.create!(first_name: 'Elise', last_name: 'Couzi', email: 'elise@email.com', password: 'azerty', manager: false)
-vivi = User.create!(first_name: 'Victor', last_name: 'Vano', email: 'victor@email.com', password: 'azerty', manager: false)
-flav = User.create!(first_name: 'Flavie', last_name: 'Leroy', email: 'flavie@email.com', password: 'azerty', manager: false)
-vaness = User.create!(first_name: 'Vanessa', last_name: 'Tsang', email: 'vanessa@email.com', password: 'azerty', manager: false)
-user5 = User.create!(first_name: 'Alexis', last_name: 'Martin', email: 'alexism@email.com', password: 'azerty', manager: true)
-user6 = User.create!(first_name: 'Adrien', last_name: 'Ladonne', email: 'adrien@email.com', password: 'azerty', manager: true)
+lapetitecouzi = User.create!(first_name: 'Elise', last_name: 'Couzi', email: 'elise@email.com', password: 'azerty', manager: false, image:"https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/110113418_10220182629455105_6889760313039827473_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ztE8VWQCGnMAX-BEAjv&tn=ZgVPPj69p7qLwUCr&_nc_ht=scontent-cdt1-1.xx&oh=9198a442f7f7ff0f239615aa7765ba39&oe=60E14AEE")
+vivi = User.create!(first_name: 'Victor', last_name: 'Vano', email: 'victor@email.com', password: 'azerty', manager: false, image:"https://images.unsplash.com/photo-1595399874399-10f2444c4eb2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=950&q=80")
+flav = User.create!(first_name: 'Flavie', last_name: 'Leroy', email: 'flavie@email.com', password: 'azerty', manager: false, image:"https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/93225795_2798209733608893_9171054795409063936_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=DxVBJNaxe2wAX8-T0i6&_nc_ht=scontent-cdt1-1.xx&oh=4f7934d572d6dd13686f7e036feab234&oe=60E1FE07")
+vaness = User.create!(first_name: 'Vanessa', last_name: 'Tsang', email: 'vanessa@email.com', password: 'azerty', manager: false, image:"https://scontent-cdt1-1.xx.fbcdn.net/v/t1.18169-9/12345652_10204965663893527_6009967808957748996_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=174925&_nc_ohc=14O2HXBIzBQAX_ZOdP8&_nc_ht=scontent-cdt1-1.xx&oh=2643a2eed9fb49247a32324531486eea&oe=60E170CD")
+user5 = User.create!(first_name: 'Alexis', last_name: 'Martin', email: 'alexism@email.com', password: 'azerty', manager: true, image:"https://images.unsplash.com/photo-1542178243-bc20204b769f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHBvcnRyYWl0fGVufDB8MnwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
+user6 = User.create!(first_name: 'Adrien', last_name: 'Ladonne', email: 'adrien@email.com', password: 'azerty', manager: true, image:"https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=60")
 user7 = User.create!(first_name: 'Maxence', last_name: 'Lacasquette', email: 'maxence@email.com', password: 'azerty', manager: true)
 user8 = User.create!(first_name: 'Alan', last_name: 'Mangaman', email: 'alan@email.com', password: 'azerty', manager: true)
 user9 = User.create!(first_name: 'Christina', last_name: 'Brasenlair', email: 'christina@email.com', password: 'azerty', manager: true)
@@ -56,7 +56,7 @@ user36 = User.create!(first_name: 'Julie', last_name: 'Masseur', email: 'juliema
 user37 = User.create!(first_name: 'Francoise', last_name: 'Tatie', email: 'francoiset@email.com', password: 'azerty', manager: true)
 user38 = User.create!(first_name: 'Eugénie', last_name: 'Delalampe', email: 'eugénie@email.com', password: 'azerty', manager: true)
 user39 = User.create!(first_name: 'Marion', last_name: 'Yonyon', email: 'marion@email.com', password: 'azerty', manager: true)
-user40 = User.create!(first_name: 'Paula', last_name: 'Douzan', email: 'paula@email.com', password: 'azerty', manager: true)
+user40 = User.create!(first_name: 'Paula', last_name: 'Douzan', email: 'paula@email.com', password: 'azerty', manager: true, image: "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
 user41 = User.create!(first_name: 'Laetitia', last_name: 'Chandeleer', email: 'laetitia@email.com', password: 'azerty', manager: true)
 user42 = User.create!(first_name: 'Kevin', last_name: 'Teidje', email: 'kevin@email.com', password: 'azerty', manager: true)
 user43 = User.create!(first_name: 'Naomie', last_name: 'Campbell', email: 'naomiec@email.com', password: 'azerty', manager: true)
