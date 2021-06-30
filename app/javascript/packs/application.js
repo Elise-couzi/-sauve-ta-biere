@@ -28,6 +28,7 @@ require("channels")
 import "bootstrap";
 import { initScroll } from '../components/scroll';
 import {showModal } from '../components/bar_beer';
+import { initMapbox } from '../plugins/init_mapbox';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initScroll();
   showModal();
+  initMapbox();
 });

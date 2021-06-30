@@ -26,8 +26,10 @@
     <div class="panier-card">
       <div class="delete delete-panier">
         <%= link_to order_beer_path(order_beer), remote: true, method: :delete,  data: { confirm: "Veux tu vraiment supprimer ta bière ?" } do %>
-          <i class="fas fa-times btn-jaune"></i>
-        <% end %>
+
+          <i class="fas fa-times btn-delete"></i>
+        <% end %> 
+
       </div>
 
     <div class="title-cart-beer">
@@ -74,12 +76,13 @@
       <div class="total-quantity-panier">
       <% @order.amount_total = @beer_price %>
       <% @order.save %>
+
       <% total_saved = 0 %>
       <% @order.order_beers.each do | order_beer | %>
       <% total_saved += order_beer.quantity %>
       <% end %>
       <p style="font-size:24px; font-weight:bold; margin:0 auto;">Total</p>
-      <p style="font-size:14px">Merci ! Tu as sauvé <%= total_saved %> litres bières!</p>
+      <p style="font-size:14px; margin:0 auto;">Tu as sauvé <%= total_saved %> litres bières !</p>
       </div>
 
        <div class="total-price-panier">
