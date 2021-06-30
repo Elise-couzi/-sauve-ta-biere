@@ -84,7 +84,20 @@
   padding: 24px;
 }
 .total-card {
+  display: inline-flex;
   background-color: white;
   border-top: 2px solid lightgrey;
   border-bottom: 2px solid lightgrey;
+  padding-right: 8px;
+  padding-left: 8px;
+  padding-top: 8px;
+  margin: 16px 0;
+}
+.total-quantity-panier {
+  flex: 1;
+}
+.total-price-panier {
+  font-size: 24px;
+  font-weight: bold;
+  align-self: end;
 }
