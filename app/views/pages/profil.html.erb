@@ -1,4 +1,4 @@
-<div class="navbar-top" style="background-size: cover; background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlcnxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60);">
+<div class="navbar-top-profil" style="background-size: cover; background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlcnxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60);">
   <li class="navbar-nav">
     <div class= "container" style="margin-top: 25px;">
     <a href="javascript:history.back()"><i class="fas fa-chevron-left btn-arrow-white"></i></a>
@@ -16,11 +16,35 @@
 </div>
 
 
-
 <div class="container elmt-center">
   <img class="avatar-bar" alt="" src="<%= current_user.image %>" />
+  <p style="margin: -40px;color: orange";><%= current_user.first_name %></p>
+</div>
 
-  <p style="color: orange";>Salut <%= current_user.first_name %> !</p>
+<div style="padding: 40px"></div>
+
+<div class="container">
+  <h5>Bières sauvées !</h5>
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Etat</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.paid_at.strftime("%d/%m/%Y") %></td>
+      <td><%= @state[order.state] %></td>
+      <td><%= order.amount_total %>€</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 </div>
 
 
