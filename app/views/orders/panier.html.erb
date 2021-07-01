@@ -88,7 +88,11 @@
       <% total_saved += order_beer.quantity %>
       <% end %>
       <p style="font-size:24px; font-weight:bold; margin:0 auto;">Total</p>
+      <% if @order.order_beers.count > 0  %>
       <p style="font-size:14px; margin:0 auto;">Tu as sauvé <%= total_saved %> litres bières !</p>
+      <% else %>
+      <p>Tu n'as pas encore sauvé de bières !</p>
+      <% end %>
       </div>
 
        <div class="total-price-panier">
@@ -96,20 +100,24 @@
       </div>
     </div>
 
-  <div class="container elmt-center container-paiement">
-    <button id="pay" class="btn-gradient-rose btn-panier">Paiement</button>
-  </div>
+  <% if  @order.order_beers.count > 0 %>
+    <div class="container elmt-center container-paiement">
+      <button id="pay" class="btn-gradient-rose btn-panier">Paiement</button>
+    </div>
 
-  <script src="https://js.stripe.com/v3/"></script>
-  <script>
-    const paymentButton = document.getElementById('pay');
-    paymentButton.addEventListener('click', () => {
-      const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-      stripe.redirectToCheckout({
-        sessionId: '<%= @order.checkout_session_id %>'
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      const paymentButton = document.getElementById('pay');
+      paymentButton.addEventListener('click', () => {
+        const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+        stripe.redirectToCheckout({
+          sessionId: '<%= @order.checkout_session_id %>'
+        });
       });
-    });
-  </script>
+    </script>
+
+
+    <% end %>
 
 <div class="container" style="padding:70px">
 </div>
@@ -134,7 +142,12 @@
         <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg" %>
         <p>Panier</p>
       <% end %>
-      <% if @order.order_beers.count > 0 %>
+      <% if user_signed_in? && (@current_order && @current_order.order_beers.count > 0) %>
+        <div class="cart-item-round-navbar">
+          <%= @current_order.order_beers.count %>
+        </div>
+      <% end %>
+      <% if user_signed_in? && (@order && @order.order_beers.count > 0) %>
         <div class="cart-item-round-navbar">
           <%= @order.order_beers.count %>
         </div>
