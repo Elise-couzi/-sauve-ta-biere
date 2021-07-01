@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
    resources :bar_beers, only: [:edit, :update, :destroy] do
     resources :order_beers, only:[:create]
@@ -32,9 +33,6 @@ Rails.application.routes.draw do
       patch :remove_quantity, as: :remove
     end
   end
-
- 
-  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
 
 # patch "/validate/:id", to: "order_beers#validate" , as: :validated
