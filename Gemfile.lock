@@ -136,11 +136,9 @@ GEM
     msgpack (1.4.2)
     netrc (0.11.0)
     nio4r (2.5.7)
-
-
     nokogiri (1.11.7-x86_64-linux)
 
-        racc (~> 1.4)
+      racc (~> 1.4)
 
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -232,7 +230,9 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
 
+
     stripe (5.35.0)
+
 
     stripe_event (2.3.1)
       activesupport (>= 3.1)
@@ -272,7 +272,6 @@ GEM
 
 
 PLATFORMS
-
   x86_64-linux
 
 
