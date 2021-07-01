@@ -137,9 +137,11 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.7)
 
+
     nokogiri (1.11.7-x86_64-linux)
 
     nokogiri (1.11.7-x86_64-darwin)
+
 
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -231,7 +233,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    stripe (5.35.0)
     stripe_event (2.3.1)
       activesupport (>= 3.1)
       stripe (>= 2.8, < 6)
@@ -270,9 +271,11 @@ GEM
 
 PLATFORMS
 
+
   x86_64-linux
 
   x86_64-darwin-18
+
 
 
 DEPENDENCIES
