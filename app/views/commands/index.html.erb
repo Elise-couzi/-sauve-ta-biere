@@ -7,43 +7,45 @@
   </div>
 </div>
 
-<div class="container">
+
+
+
+<div style="padding:16px">
 <% @orders.each do |order| %>
   <div class="container card-command"  style="margin-top:20px;">
   <div class="card-contact-info">
   <div class="container user-contact">
       <p style="font-weight:bold; margin-bottom:0;"><%=order.user.first_name %> <%=order.user.last_name %></p>
-      <p class="small-text"><%=order.state  %></p>
     </div>
     <div class="container info-commands">
-      <p style="font-weight:bold; margin-bottom:0;">commande #<%=order.id  %></p>
-      <p class="small-text">payée le 22/06/2021 à 20h20</p>
+      <p style="font-weight:bold; margin-bottom:0;">commande #<%= order.id  %></p>
+      <p class="small-text">Payée le <%= order.paid_at.strftime("%d/%m/%Y") %></p>
     </div>
   </div>
 
-    <div class="container">
+    <div class="container bloc-info  p-0">
     <% order.order_beers.each do |order_beer| %>
     <% if order_beer.bar_beer.owner?(current_user) %>
           <div class="beers-card-infos">
-           <div>
+           <div class="beer-quantity col-3">
               <p style="color:orange; font-weight:bold;"><%= order_beer.quantity %> L</p>
             </div>
-            <div>
+            <div class="beer-category col-6">
               <h5 style="font-weight:bold; font-size:14px; margin-bottom:0;"><%= order_beer.bar_beer.beer.name %> </h5>
               <p class="small-text"><%= order_beer.bar_beer.beer.category %>, <%= order_beer.bar_beer.beer.alcohol_degree %>°</p>
             </div>
           <div>
-           <p class="small-text"><%= order_beer.buying_price %>€</p>
+         
           </div>
-            <div class="bloc-price">
+            <div class="bloc-price col-3">
               <h5 style="font-weight:bold;"><%= order_beer.buying_price * order_beer.quantity  %> €</h5>
             </div>
           </div>
           <% end %>
            <% end %>
     </div>
-  <div class="container total">
-    <div class="container total-info">
+  <div class="container total  p-0">
+    <div class="container total-info col-8">
       <h3 style="font-weight:bold; margin-bottom:0;">Total</h3>
       <p class="small-text">
       <% total_qty = 0 %>
@@ -51,11 +53,17 @@
       <% if order_beer.bar_beer.owner?(current_user) %>
         <% total_qty += order_beer.quantity %>
       <% end %>
-      <% end %>
-      <%= total_qty %> litres de bières sauvés!
+
+      <% if total_qty > 1 %>
+      <%= total_qty %> litres de bières sauvées !
+      <% else %>
+      <%= total_qty = 1 %> litre de bière sauvé !
+        <% end %>
+
       </p>
+    
     </div>
-    <div class="container total-price">
+    <div class="container total-price col-4">
     <h3 style="font-weight:bold;">
     <% total = 0 %>
     <% order.order_beers.each do |order_beer| %>
@@ -70,9 +78,10 @@
   </div>
     
   </div>
-</div>
+
 <% end %>
 
+</div>
 <div style="padding: 70px"></div>
 
 <div class="navbar fixed-bottom navbar-app">
