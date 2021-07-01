@@ -16,27 +16,28 @@ class OrdersController < ApplicationController
     # recup l'order du current_user (particulier) => state / paid_at
     # @order = Order.current_user
     # @order.order_beers.map { |ob| ob.quantity * ob.amount_cents }.reduce(:+)
-    if  @order.order_beers.count > 0
-      session = Stripe::Checkout::Session.create(
-        payment_method_types: ['card'],
-        line_items: [{
-          name: @order.id,
-          images: [@order.photo_url],
-          amount: @order.order_beers.map { |ob| ob.quantity * ob.amount_cents }.reduce(:+),
-          currency: 'eur',
-          quantity: 1
-        }],
-        # rediriger vers le profil / Page de confirmation
-        success_url: orders_url(@order),
-        cancel_url: orders_url(@order)
-        )
-      @order.update!(checkout_session_id: session.id)
-    end
+
+  if  @order.order_beers.count > 0
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: [{
+        name: "Commande nº#{@order.id}",
+        images: [@order.photo_url],
+        amount: @order.order_beers.map { |ob| ob.quantity * ob.amount_cents }.reduce(:+),
+        currency: 'eur',
+        quantity: 1
+      }],
+      # rediriger vers le profil / Page de confirmation
+      success_url: profil_url,
+      cancel_url: orders_url(@order)
+      )
+    @order.update!(checkout_session_id: session.id)
+  end
+
   end
   # Not used anymore
   # def checkout_session
   #   @order = current_user.orders.find_by(state: 'pending')
   #   @order_beers = @order.order_beers
   # end
-
 end
