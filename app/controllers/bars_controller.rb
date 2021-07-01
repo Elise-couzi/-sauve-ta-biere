@@ -7,7 +7,7 @@ class BarsController < ApplicationController
     # MAP
     @filters_bars = @bars.select { |bar| bar.bar_beers.size > 0 }
     
-    @markers = Bar.joins(:bar_beers).geocoded.map do |bar|
+    @markers = Bar.joins(:bar_beers).geocoded.map do |bar| # pour afficher uniquement les bars qui ont des bar_beers
       {
         lat: bar.latitude,
         lng: bar.longitude,
