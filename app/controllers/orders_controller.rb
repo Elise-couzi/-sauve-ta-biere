@@ -16,14 +16,14 @@ class OrdersController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
-        name: @order.id,
+        name: "Commande nº#{@order.id}",
         images: [@order.photo_url],
         amount: @order.order_beers.map { |ob| ob.quantity * ob.amount_cents }.reduce(:+),
         currency: 'eur',
         quantity: 1
       }],
       # rediriger vers le profil / Page de confirmation
-      success_url: orders_url(@order),
+      success_url: profil_url,
       cancel_url: orders_url(@order)
       )
     @order.update!(checkout_session_id: session.id)
@@ -33,5 +33,4 @@ class OrdersController < ApplicationController
   #   @order = current_user.orders.find_by(state: 'pending')
   #   @order_beers = @order.order_beers
   # end
-
 end
