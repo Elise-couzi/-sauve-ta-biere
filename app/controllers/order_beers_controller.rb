@@ -8,7 +8,7 @@ class OrderBeersController < ApplicationController
     # creer le order_beer avec ces 2 infos (params
     @order = Order.find_by(user:current_user,state:"pending")
     if @order.nil?
-      @order = Order.create!(user: current_user, state: "pending")
+      @order = Order.create!(user: current_user, state: "pending", paid_at: DateTime.now)
     end
     @order_beer = OrderBeer.new(order_beer_params)
     @order_beer.order = @order
