@@ -1,11 +1,12 @@
 class BarBeersController < ApplicationController
   before_action :set_bar_beer, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
+  skip_before_action :authenticate_user!
 
   def index
     @bar = Bar.find(params[:bar_id])
 
     @bar_beers = policy_scope(BarBeer).where(bar:@bar).includes(:beer)
+    @order = policy_scope(Order).find_by(user_id: current_user)
   end
 
   def new

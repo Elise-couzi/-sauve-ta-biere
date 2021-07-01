@@ -7,7 +7,7 @@ class BarsController < ApplicationController
     # MAP
     @filters_bars = @bars.select { |bar| bar.bar_beers.size > 0 }
     
-    @markers = Bar.joins(:bar_beers).geocoded.map do |bar|
+    @markers = Bar.joins(:bar_beers).geocoded.map do |bar| # pour afficher uniquement les bars qui ont des bar_beers
       {
         lat: bar.latitude,
         lng: bar.longitude,
@@ -15,6 +15,7 @@ class BarsController < ApplicationController
         image_url: helpers.asset_url('https://res.cloudinary.com/dduubmloj/image/upload/v1625071219/noun_map_orange_yo5jhg.svg')
       }
     end
+    @order = policy_scope(Order).find_by(user_id: current_user)
   end
 
   def show; end

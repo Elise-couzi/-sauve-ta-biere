@@ -14,9 +14,13 @@
       <div class="img-panier">
         <%= image_tag("https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg") %>
       </div>
-      <div class="cart-item-round">
-        <%= @order.order_beers.count  %>
-      </div>
+
+      <% if @order.order_beers.count > 0 %>
+        <div class="cart-item-round">
+          <%= @order.order_beers.count %>
+        </div>
+      <% end %>
+
     </div>
   </div>
   <div class="container">
@@ -28,7 +32,7 @@
         <%= link_to order_beer_path(order_beer), remote: true, method: :delete,  data: { confirm: "Veux tu vraiment supprimer ta bière ?" } do %>
 
           <i class="fas fa-times btn-delete"></i>
-        <% end %> 
+        <% end %>
 
       </div>
 
@@ -129,13 +133,25 @@
         <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461201/noun_basket_4004349_euzbws.svg" %>
         <p>Panier</p>
       <% end %>
+      <% if @order.order_beers.count > 0 %>
+        <div class="cart-item-round-navbar">
+          <%= @order.order_beers.count %>
+        </div>
+      <% end %>
     </li>
 
     <li class="navbar-nav" style="text-align: center">
-      <%= link_to "/profil", class: "nav-link" do %>
-        <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
-        <p>Profil</p>
-      <% end %>
+      <% if user_signed_in? %>
+    <%= link_to "/profil", class: "nav-link" do %>
+      <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+      <p>Profil</p>
+    <% end %>
+    <% else %>
+     <%= link_to new_user_session_path, class: "nav-link" do %>
+      <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+      <p>Profil</p>
+    <% end %>
+  <% end %>
     </li>
   </div>
 
