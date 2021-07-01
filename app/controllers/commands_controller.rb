@@ -4,13 +4,23 @@ class CommandsController < ApplicationController
     @bar = @user.bar
     @bar_beers = policy_scope(BarBeer).where(bar: @bar).includes(:beer)
     @order_beers = OrderBeer.where(bar_beer_id: @bar_beers)
-    list_id =[]
+    
+    list_id = []
     @order_beers.each do |order_beer|
     list_id << order_beer.order_id
     end
     @orders = Order.where(id: list_id)
   end
 
+#   def delivered
+#     @user = current_user
+#     @bar = @user.bar
+#     @bar_beers = policy_scope(BarBeer).where(bar: @bar).includes(:beer)
+#     @order_beers = OrderBeer.where(bar_beer_id: @bar_beers)
+#     @order_beers.each do |order_beer|
+#       order_beer.bar_beer.update(state: "Sauvée")
+#     end
+#   end
 end
 # recup le bar de l'utilisateur actuel => bar.find_by(params[:bar_id])
 # @bar = current_bar ??

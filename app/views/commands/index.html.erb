@@ -23,6 +23,7 @@
 
     <div class="container">
     <% order.order_beers.each do |order_beer| %>
+    <% if order_beer.bar_beer.owner?(current_user) %>
           <div class="beers-card-infos">
            <div>
               <p style="color:orange; font-weight:bold;"><%= order_beer.quantity %> L</p>
@@ -38,6 +39,7 @@
               <h5 style="font-weight:bold;"><%= order_beer.buying_price * order_beer.quantity  %> €</h5>
             </div>
           </div>
+          <% end %>
            <% end %>
     </div>
   <div class="container total">
@@ -46,7 +48,9 @@
       <p class="small-text">
       <% total_qty = 0 %>
       <% order.order_beers.each do |order_beer| %>
+      <% if order_beer.bar_beer.owner?(current_user) %>
         <% total_qty += order_beer.quantity %>
+      <% end %>
       <% end %>
       <%= total_qty %> litres de bières sauvés!
       </p>
@@ -55,7 +59,9 @@
     <h3 style="font-weight:bold;">
     <% total = 0 %>
     <% order.order_beers.each do |order_beer| %>
+     <% if order_beer.bar_beer.owner?(current_user) %>
     <% total += order_beer.buying_price * order_beer.quantity %>
+    <% end %>
     <% end %>
     <%= total %> €
     </h3>
