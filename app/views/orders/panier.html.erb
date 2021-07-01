@@ -50,8 +50,10 @@
 
       <div class="add-remove">
         <div class="remove">
+        <% if order_beer.quantity >1 %>
           <%= link_to remove_order_beer_path(order_beer), method: :patch do %>
             <i class="fas fa-minus btn-rose" style="font-size: 24px;"></i>
+          <% end %>
           <% end %>
         </div>
 
