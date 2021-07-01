@@ -140,7 +140,7 @@ GEM
 
     nokogiri (1.11.7-x86_64-linux)
 
-    nokogiri (1.11.7-x86_64-darwin)
+   
 
 
       racc (~> 1.4)
@@ -274,7 +274,7 @@ PLATFORMS
 
   x86_64-linux
 
-  x86_64-darwin-18
+
 
 
 
