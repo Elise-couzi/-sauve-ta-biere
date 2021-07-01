@@ -8,6 +8,10 @@ class PagesController < ApplicationController
   def profil
     @orders = Order.where(user_id: current_user)
     @state = {"pending" => "en attente", "paid" => "payée"}
+    @current_order = policy_scope(Order).find_by(user_id: current_user, state: "pending")
+  end
+
+  def pro
     @order = policy_scope(Order).find_by(user_id: current_user)
   end
 end

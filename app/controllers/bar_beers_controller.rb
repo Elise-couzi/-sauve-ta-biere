@@ -10,6 +10,7 @@ class BarBeersController < ApplicationController
   end
 
   def new
+    @beers = Beer.all
     @bar = Bar.find(params[:bar_id])
     @bar_beer = BarBeer.new
     authorize @bar_beer
@@ -18,7 +19,7 @@ class BarBeersController < ApplicationController
   def create
     @user = current_user
     @bar = Bar.find(params[:bar_id])
-    @beer = Beer.find_by(name: params[:beer_name])
+    @beer = Beer.find_by(id: params[:bar_beer][:beer_id])
     if @beer
       @bar_beer = BarBeer.new(bar_beer_params)
       @bar_beer.beer = @beer
@@ -55,6 +56,6 @@ class BarBeersController < ApplicationController
   end
 
   def bar_beer_params
-    params.require(:bar_beer).permit(:quantity, :selling_price)
+    params.require(:bar_beer).permit(:quantity, :selling_price, :beer_id)
   end
 end

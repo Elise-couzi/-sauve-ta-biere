@@ -7,7 +7,8 @@
 
 <%= simple_form_for [@bar, @bar_beer] do |f| %>
 <div id="1" class="section" style="margin: 20px">
-  <input name="beer_name" type="search" class="input-style" placeholder="Nom"/>
+  <%# <input name="beer_name" type="search" class="input-style" placeholder="Nom"/> %>
+  <%= f.input :beer_id, input_html: { class: "input-style"}, collection: @beers %>
       <div style="margin: 20px" class="btn-scroll fas fa-check-circle btn-valid-rose btn-large"></div>
  </div>
 

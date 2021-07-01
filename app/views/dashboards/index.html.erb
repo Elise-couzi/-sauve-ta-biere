@@ -39,7 +39,7 @@
     <a class="nav-link pills-left" data-toggle="tab" href="#bières">Bières</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link pills-right" data-toggle="tab" href="#stats">Stats</a>
+    <a class="nav-link pills-right" data-toggle="tab" href="#stats">Historique</a>
   </li>
 </ul>
 <!-- Fin Nav tabs -->
@@ -91,10 +91,68 @@
   </div>
 
   <div id="stats" class="tab-pane fade">
-    <!-- Mes Stats -->
+    <!-- Mon Historique -->
     <div style="margin: 50px"></div>
 
+<div class="container">
+<% @orders_history.each do |order| %>
+  <div class="container card-command"  style="margin-top:20px;">
+  <div class="card-contact-info">
+  <div class="container user-contact">
+      <p style="font-weight:bold; margin-bottom:0;"><%=order.user.first_name %> <%=order.user.last_name %></p>
+      <p class="small-text"><%=order.state  %></p>
+    </div>
+    <div class="container info-commands">
+      <p style="font-weight:bold; margin-bottom:0;">commande #<%=order.id  %></p>
+      <p class="small-text">payée le 22/06/2021 à 20h20</p>
+    </div>
+  </div>
 
+    <div class="container">
+    <% order.order_beers.each do |order_beer| %>
+          <div class="beers-card-infos">
+           <div>
+              <p style="color:orange; font-weight:bold;"><%= order_beer.quantity %> L</p>
+            </div>
+            <div>
+              <h5 style="font-weight:bold; font-size:14px; margin-bottom:0;"><%= order_beer.bar_beer.beer.name %> </h5>
+              <p class="small-text"><%= order_beer.bar_beer.beer.category %>, <%= order_beer.bar_beer.beer.alcohol_degree %>°</p>
+            </div>
+          <div>
+           <p class="small-text"><%= order_beer.buying_price %>€</p>
+          </div>
+            <div class="bloc-price">
+              <h5 style="font-weight:bold;"><%= order_beer.buying_price * order_beer.quantity  %> €</h5>
+            </div>
+          </div>
+           <% end %>
+    </div>
+  <div class="container total">
+    <div class="container total-info">
+      <h3 style="font-weight:bold; margin-bottom:0;">Total</h3>
+      <p class="small-text">
+      <% total_qty = 0 %>
+      <% order.order_beers.each do |order_beer| %>
+        <% total_qty += order_beer.quantity %>
+      <% end %>
+      <%= total_qty %> litres de bières sauvés!
+      </p>
+    </div>
+    <div class="container total-price">
+    <h3 style="font-weight:bold;">
+    <% total = 0 %>
+    <% order.order_beers.each do |order_beer| %>
+    <% total += order_beer.buying_price * order_beer.quantity %>
+    <% end %>
+    <%= total %> €
+    </h3>
+    </div>
+
+  </div>
+    
+  </div>
+</div>
+<% end %>
 
       <div style="margin: 50px"></div>
   </div>
