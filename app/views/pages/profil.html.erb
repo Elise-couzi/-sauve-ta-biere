@@ -37,11 +37,13 @@
   </thead>
   <tbody>
     <% @orders.each do |order| %>
+      <% if order.amount_total > 0 %>
     <tr>
       <td><%= order.paid_at.strftime("%d/%m/%Y") %></td>
       <td><%= @state[order.state] %></td>
       <td><%= order.amount_total %>€</td>
     </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
