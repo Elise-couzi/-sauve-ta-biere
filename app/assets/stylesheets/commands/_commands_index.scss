@@ -8,9 +8,8 @@
   padding-top: 20px;
 }
 .title-bloc {
-  flex: 1;
   padding: 16px;
-  margin: 0 100px 20px 0;
+  margin: 0 auto;
 }
 .card-command {
   padding: 8px 8px 8px 8px;
@@ -36,20 +35,25 @@
 }
 .bloc-price {
   border-left: solid 1px grey;
-  padding: 8px 8px 0 26px;
+  // padding: 8px 8px 0 26px;
+  text-align: right;
 }
 .total {
   display: flex;
   border-top: solid 2px grey;
-  padding: 8px 0 8px 0;
+  // padding: 8px 0 8px 0;
+  margin-top: 16px;
+
 }
 .total-info {
   text-align: left;
   flex: 1;
+  margin-top: 16px;
 }
 .total-price {
   text-align: right;
   flex: 1;
+  margin-top: 16px;
 }
 .btn-command {
   text-align: center;
@@ -60,3 +64,13 @@
 .btn-refuser-command {
 text-align: right;
 }
+
+// .beer-card-info {
+//   // display: grid;
+  
+// 	// flex-direction: row;
+// 	// flex-wrap: nowrap;
+// 	// justify-content: space-around;
+// 	// align-items: stretch;
+// 	// align-content: space-around;
+// }
