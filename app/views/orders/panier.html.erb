@@ -141,10 +141,17 @@
     </li>
 
     <li class="navbar-nav" style="text-align: center">
-      <%= link_to "/profil", class: "nav-link" do %>
-        <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
-        <p>Profil</p>
-      <% end %>
+      <% if user_signed_in? %>
+    <%= link_to "/profil", class: "nav-link" do %>
+      <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+      <p>Profil</p>
+    <% end %>
+    <% else %>
+     <%= link_to new_user_session_path, class: "nav-link" do %>
+      <%= image_tag "https://res.cloudinary.com/dduubmloj/image/upload/v1624461653/face_nfkywp.svg" %>
+      <p>Profil</p>
+    <% end %>
+  <% end %>
     </li>
   </div>
 

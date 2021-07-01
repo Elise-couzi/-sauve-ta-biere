@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
-    before_action :set_bar_beer, only: [:edit, :update, :destroy]
+  before_action :set_bar_beer, only: [:edit, :update, :destroy]
+
   def index
     @user = current_user
     @bar = @user.bar
