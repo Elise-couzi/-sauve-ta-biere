@@ -15,6 +15,7 @@ class BarsController < ApplicationController
         image_url: helpers.asset_url('https://res.cloudinary.com/dduubmloj/image/upload/v1625071219/noun_map_orange_yo5jhg.svg')
       }
     end
+    @order = policy_scope(Order).find_by(user_id: current_user)
   end
 
   def show; end
