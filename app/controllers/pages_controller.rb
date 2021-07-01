@@ -13,5 +13,6 @@ class PagesController < ApplicationController
 
   def pro
     @order = policy_scope(Order).find_by(user_id: current_user)
+    @user = current_user
   end
 end

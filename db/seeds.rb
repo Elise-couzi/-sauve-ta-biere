@@ -167,25 +167,6 @@ bar_beers20 = BarBeer.create!(quantity: 5, selling_price: 3 , beer: beer21, bar:
 puts "#{BarBeer.count} offres de bières ajoutées"
 
 
-order1 = Order.create!(state:"paid", paid_at:Date.new(2021, 8, 02), user: lapetitecouzi, amount_total_cents: 0)
-order2 = Order.create!(state:"paid", paid_at:Date.new(2021, 02, 6), user: vivi, amount_total_cents: 0)
-order3 = Order.create!(state:"paid", paid_at:Date.new(2021, 02, 6), user: flav, amount_total_cents: 0)
-order4 = Order.create!(state:"paid", paid_at:Date.new(2021, 02, 6), user: vaness,amount_total_cents: 0)
-
-
-puts "#{Order.count} commandes ajoutées"
-
-order_beer1 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers1, order: order1, amount_cents: 400)
-order_beer2 = OrderBeer.create!(quantity:2, buying_price:3, bar_beer: bar_beers2, order: order1, amount_cents: 550)
-order_beer3 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers1, order: order2, amount_cents: 350)
-order_beer3 = OrderBeer.create!(quantity:3, buying_price:3, bar_beer: bar_beers2, order: order2, amount_cents: 600)
-order_beer5 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers3, order: order3, amount_cents: 750)
-order_beer6 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers3, order: order3, amount_cents: 800)
-order_beer7 = OrderBeer.create!(quantity:1, buying_price:3, bar_beer: bar_beers3, order: order4, amount_cents: 800)
-
-
-puts "#{OrderBeer.count} détails de commandes ajoutées"
-
 
 schedule1 = Schedule.create!(day:"Lundi", start_time: "17", end_time: "19", bar:bar35)
 
